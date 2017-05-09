@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=
-comment0.target=CrapsStats()
+comment0.target=AdventureStats()
 comment1.params=e
 comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment2.params=args

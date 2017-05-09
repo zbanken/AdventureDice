@@ -6,10 +6,10 @@ import javax.swing.*;
 public class ControlPanel extends JPanel
     implements ActionListener
 {
-  private CrapsTable table;
+  private AdventureTable table;
 
   // Constructor
-  public ControlPanel(CrapsTable t)
+  public ControlPanel(AdventureTable t)
   {
     table = t;
     JButton rollButton = new JButton("Roll");

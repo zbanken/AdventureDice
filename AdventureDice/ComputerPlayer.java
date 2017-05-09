@@ -2,7 +2,7 @@ import java.util.*;
 
 public class ComputerPlayer
 {
-    private CrapsGame game;
+    private AdventureGame game;
     private Die redDie;
     private Die blackDie;
     private int winTotal;
@@ -15,7 +15,7 @@ public class ComputerPlayer
         System.out.println("$>________________________________");
         redDie = new Die();
         blackDie = new Die();
-        game = new CrapsGame();
+        game = new AdventureGame();
     }
     public void rollTheDice() {
         int total;
