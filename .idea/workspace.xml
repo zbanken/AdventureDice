@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f05c64af-2ece-4948-996d-8e5853e871f1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ChoicePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AdventureDice.java" afterPath="$PROJECT_DIR$/src/AdventureDice.java" />
-    </list>
+    <list default="true" id="f05c64af-2ece-4948-996d-8e5853e871f1" name="Default" comment="" />
     <ignored path="AdventureDice.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,8 +34,8 @@
       <file leaf-file-name="DisplayPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DisplayPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="330">
+              <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -584,8 +579,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DisplayPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        <state relative-caret-position="330">
+          <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
           <folding />
         </state>
       </provider>
