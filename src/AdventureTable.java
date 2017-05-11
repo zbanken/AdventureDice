@@ -32,10 +32,17 @@ public class AdventureTable extends JPanel
   {
     RollingDie.setBounds(3, getWidth() - 3, 3, getHeight() - 3);
     die1.roll();
+    clock.start();
+  }
+  
+  public void rollTwoDice()
+  {
+    RollingDie.setBounds(3, getWidth() - 3, 3, getHeight() - 3);
+    die1.roll();
     die2.roll();
     clock.start();
   }
-
+  
   // Processes timer events
   public void actionPerformed(ActionEvent e)
   {

@@ -11,7 +11,7 @@ public class RollingDie extends Die
 
   private static int tableLeft, tableRight, tableTop, tableBottom;
 
-  private final int dieSize = 100;
+  private final int dieSize = 50;
   private int xCenter, yCenter;
   private double xSpeed, ySpeed;
 
