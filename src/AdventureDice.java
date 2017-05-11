@@ -12,16 +12,18 @@ public class AdventureDice extends JFrame
     DisplayPanel display = new DisplayPanel();
     AdventureTable table = new AdventureTable(display);
     ControlPanel controls = new ControlPanel(table);
+      ChoicePanel choice = new ChoicePanel(table);
 
     JPanel panel = new JPanel();
     panel.setLayout(new BorderLayout());
-    panel.setBorder(new EmptyBorder(0, 5, 0, 5));
-    panel.add(display, BorderLayout.NORTH);
-    panel.add(table, BorderLayout.CENTER);
-    panel.add(controls, BorderLayout.SOUTH);
+      panel.setBorder(new EmptyBorder(0, 5, 0, 5));
+      panel.add(display, BorderLayout.NORTH);
+      panel.add(table, BorderLayout.CENTER);
+      panel.add(controls, BorderLayout.SOUTH);
 
     Container c = getContentPane();
     c.add(panel, BorderLayout.CENTER);
+      c.add(choice, BorderLayout.SOUTH);
   }
 
   public static void main(String[] args)
@@ -32,4 +34,3 @@ public class AdventureDice extends JFrame
     window.setVisible(true);
   }
 }
-
