@@ -1,3 +1,5 @@
+package src;
+
 // Implements a rolling die object.
 
 import java.awt.Graphics;

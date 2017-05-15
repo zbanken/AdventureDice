@@ -1,3 +1,5 @@
+package src;
+
 // Represents the craps table with two rolling dice
 
 import java.awt.*;
@@ -20,6 +22,10 @@ public class AdventureTable extends JPanel
     setBackground(Color.decode("#0CD0CD"));
     setBorder(new LineBorder(Color.ORANGE.darker(), 3));
     display = displ;
+    
+    rollButton.setActionCommand("1Die");
+    roll2Button.setActionCommand("2Die");
+    
     game = new AdventureGame();
     die1 = new RollingDie();
     die2 = new RollingDie();
@@ -61,7 +67,7 @@ public class AdventureTable extends JPanel
       int total = die1.getNumDots() + die2.getNumDots();
       int result = game.processRoll(total);
       int point = game.getPoint();
-      display.update(result, point);
+      display.update(result, point, e);
     }
 
     repaint();

@@ -1,3 +1,5 @@
+package src;
+
 // Implements the game of Craps logic
 
 public class AdventureGame

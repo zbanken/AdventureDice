@@ -1,3 +1,5 @@
+package src;
+
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -15,9 +17,11 @@ public class ControlPanel extends JPanel
         JButton rollButton = new JButton("Roll 1");
         JButton roll2Button = new JButton("Roll 2");
         rollButton.setActionCommand("1Die");
+        
         roll2Button.setActionCommand("2Die");
         rollButton.addActionListener(this);
         roll2Button.addActionListener(this);
+        
         add(rollButton);
         add(roll2Button);
     }
