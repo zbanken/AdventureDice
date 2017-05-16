@@ -5,13 +5,14 @@ import javax.swing.border.*;
 public class AdventureDice extends JFrame
 {
   // Constructor
+  DisplayPanel display;
   public AdventureDice()
   {
     super("AdventureDice");
 
-    DisplayPanel display = new DisplayPanel();
+    display = new DisplayPanel();
     AdventureTable table = new AdventureTable(display);
-    ControlPanel controls = new ControlPanel(table);
+    ControlPanel controls = new ControlPanel(table, this);
       ChoicePanel choice = new ChoicePanel(table);
 
     JPanel panel = new JPanel();
@@ -24,6 +25,11 @@ public class AdventureDice extends JFrame
     Container c = getContentPane();
     c.add(panel, BorderLayout.CENTER);
       c.add(choice, BorderLayout.SOUTH);
+  }
+  
+  public DisplayPanel getDisplay()
+  {
+     return display;    
   }
 
   public static void main(String[] args)
