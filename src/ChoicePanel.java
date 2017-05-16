@@ -1,5 +1,3 @@
-package src;
-
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -14,8 +12,8 @@ public class ChoicePanel extends JPanel
     public ChoicePanel(AdventureTable t)
     {
         table = t;
-        JButton Option1 = new JButton("Option 1");
-        JButton Option2 = new JButton("Option 2");
+        JButton Option1 = new JButton("Do This");
+        JButton Option2 = new JButton("Do That");
         Option1.setActionCommand("Option1");
         Option2.setActionCommand("Option2");
         Option1.addActionListener(this);
