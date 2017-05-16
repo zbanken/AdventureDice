@@ -38,10 +38,10 @@ public class DisplayPanel extends JPanel {
     public void update(int result, int point, ActionEvent e) {
 
         if (e.getActionCommand().equals("1Die")) {
-
             String currentRolls = rolls - 1 + "";
             rollsText.setText(currentRolls);
-        } else if (e.getActionCommand().equals("2Die")) {
+        }
+        else if (e.getActionCommand().equals("2Die")) {
             String currentRolls2 = rolls - 2 + "";
             rollsText.setText(currentRolls2);
         }
