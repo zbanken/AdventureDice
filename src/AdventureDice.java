@@ -6,6 +6,7 @@ public class AdventureDice extends JFrame
 {
   // Constructor
   DisplayPanel display;
+  AdventurePanel journey;
   public AdventureDice()
   {
     super("AdventureDice");
@@ -14,6 +15,7 @@ public class AdventureDice extends JFrame
     AdventureTable table = new AdventureTable(display);
     ControlPanel controls = new ControlPanel(table, this);
       ChoicePanel choice = new ChoicePanel(table);
+    journey = new AdventurePanel();
 
     JPanel panel = new JPanel();
     panel.setLayout(new BorderLayout());
@@ -21,6 +23,7 @@ public class AdventureDice extends JFrame
       panel.add(display, BorderLayout.NORTH);
       panel.add(table, BorderLayout.CENTER);
       panel.add(controls, BorderLayout.SOUTH);
+    panel.add(journey, BorderLayout.EAST);
 
     Container c = getContentPane();
     c.add(panel, BorderLayout.CENTER);

@@ -40,7 +40,6 @@ public class DisplayPanel extends JPanel {
 
         
         if(rolls > 0)
-
         {
 
             if (e.getActionCommand().equals("1Die")) {
