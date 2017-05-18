@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05c64af-2ece-4948-996d-8e5853e871f1" name="Default" comment="Added">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AdventurePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AdventureDice.java" afterPath="$PROJECT_DIR$/src/AdventureDice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DisplayPanel.java" afterPath="$PROJECT_DIR$/src/DisplayPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="AdventureDice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -107,6 +104,7 @@
         <option value="$PROJECT_DIR$/src/RollingDie.java" />
         <option value="$PROJECT_DIR$/src/AdventureDice.java" />
         <option value="$PROJECT_DIR$/src/AdventurePanel.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -844,6 +842,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
           <folding />
         </state>
       </provider>
