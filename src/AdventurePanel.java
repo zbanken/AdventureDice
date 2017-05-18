@@ -23,4 +23,8 @@ public class AdventurePanel extends JPanel {
         AdventureText.setBackground(Color.WHITE);
         add(AdventureText);
     }
+
+    public void changeText(String newText) {
+        AdventureText.setText(newText);
+    }
 }
