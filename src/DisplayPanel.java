@@ -39,7 +39,7 @@ public class DisplayPanel extends JPanel {
         //   rollsText.setText("0");
 
         
-          if(rolls > 0)
+        if(rolls > 0)
 
         {
 
@@ -49,7 +49,7 @@ public class DisplayPanel extends JPanel {
                 rollsText.setText(currentRolls);
             }
         }
-        else if(rolls > 1) 
+        if(rolls > 1)
         {
             if (e.getActionCommand().equals("2Die")) {
                 rolls = rolls-2;
