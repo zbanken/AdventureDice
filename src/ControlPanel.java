@@ -4,14 +4,12 @@ import javax.swing.*;
 // Represents a control panel for a craps "table"
 
 public class ControlPanel extends JPanel
-        implements ActionListener
-{
+        implements ActionListener {
     private AdventureTable table;
     private AdventureDice parent;
 
     // Constructor
-    public ControlPanel(AdventureTable t, AdventureDice d)
-    {
+    public ControlPanel(AdventureTable t, AdventureDice d) {
         table = t;
         parent = d;
         JButton rollButton = new JButton("Roll 1");
@@ -25,15 +23,14 @@ public class ControlPanel extends JPanel
     }
 
     // Called when the roll button is clicked
-    public void actionPerformed(ActionEvent e)
-    {
+    public void actionPerformed(ActionEvent e) {
         if (!table.diceAreRolling())
             if (e.getActionCommand().equals("1Die")) {
                 table.rollDice();
-                parent.getDisplay().update(1,1,e);
+                parent.getDisplay().update(1, 1, e);
             } else if (e.getActionCommand().equals("2Die")) {
                 table.rollTwoDice();
-                parent.getDisplay().update(1,1,e);
+                parent.getDisplay().update(1, 1, e);
             }
     }
 }

@@ -4,13 +4,11 @@ import javax.swing.*;
 // Represents a control panel for a craps "table"
 
 public class ChoicePanel extends JPanel
-        implements ActionListener
-{
+        implements ActionListener {
     private AdventureTable table;
 
     // Constructor
-    public ChoicePanel(AdventureTable t)
-    {
+    public ChoicePanel(AdventureTable t) {
         table = t;
         JButton Option1 = new JButton("Do This");
         JButton Option2 = new JButton("Do That");
@@ -23,8 +21,7 @@ public class ChoicePanel extends JPanel
     }
 
     // Called when the roll button is clicked
-    public void actionPerformed(ActionEvent e)
-    {
+    public void actionPerformed(ActionEvent e) {
         if (!table.diceAreRolling())
             if (e.getActionCommand().equals("Option1")) {
 

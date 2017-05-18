@@ -9,7 +9,7 @@ public class DisplayPanel extends JPanel {
     private JTextField rollsText, healthText;
     private int wonCount, lostCount;
 
-    
+
     public DisplayPanel() {
         super(new GridLayout(2, 3, 10, 0));
         setBorder(new EmptyBorder(0, 0, 5, 0));
@@ -38,20 +38,18 @@ public class DisplayPanel extends JPanel {
         //if(rolls < 0)
         //   rollsText.setText("0");
 
-        
-        if(rolls > 0)
-        {
+
+        if (rolls > 0) {
 
             if (e.getActionCommand().equals("1Die")) {
-                rolls = rolls-1;
+                rolls = rolls - 1;
                 String currentRolls = rolls + "";
                 rollsText.setText(currentRolls);
             }
         }
-        if(rolls > 1)
-        {
+        if (rolls > 1) {
             if (e.getActionCommand().equals("2Die")) {
-                rolls = rolls-2;
+                rolls = rolls - 2;
                 String currentRolls2 = rolls + "";
                 rollsText.setText(currentRolls2);
             }
