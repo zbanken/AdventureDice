@@ -1,6 +1,0 @@
-#BlueJ class context
-comment0.params=
-comment0.target=AdventurePanel()
-comment1.params=newText
-comment1.target=void\ changeText(java.lang.String)
-numComments=2
