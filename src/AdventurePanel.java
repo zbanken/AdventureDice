@@ -5,11 +5,9 @@
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.event.*;
 
 public class AdventurePanel extends JPanel {
     private JTextArea AdventureText;
-
 
     public AdventurePanel() {
         super(new GridLayout(1, 3, 10, 10));
