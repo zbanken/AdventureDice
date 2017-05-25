@@ -2,18 +2,14 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.awt.GridLayout;
 
-// Represents a control panel for a craps "table"
-
 public class ChoicePanel extends JPanel 
 implements ActionListener 
 {
-    private AdventureTable table;
     private Rooms map;
 
     // Constructor
-    public ChoicePanel(AdventureTable t, Rooms currentMap)
+    public ChoicePanel(Rooms currentMap)
     {
-        table = t;
         map = currentMap;
         setLayout(new GridLayout(0,3));
         add(new JPanel());

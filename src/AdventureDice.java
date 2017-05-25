@@ -15,7 +15,7 @@ public class AdventureDice extends JFrame {
         display = new DisplayPanel();
         AdventureTable table = new AdventureTable(display);
         ControlPanel controls = new ControlPanel(table, this);
-        ChoicePanel choice = new ChoicePanel(table, currentMap);
+        ChoicePanel choice = new ChoicePanel(currentMap);
         journey = new AdventurePanel();
 
         JPanel panel = new JPanel();

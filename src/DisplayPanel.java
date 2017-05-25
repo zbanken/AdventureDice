@@ -1,4 +1,4 @@
-// Represents a display panel for a Craps table
+
 
 import java.awt.*;
 import javax.swing.*;
@@ -7,8 +7,6 @@ import java.awt.event.*;
 
 public class DisplayPanel extends JPanel {
     private JTextField rollsText, healthText;
-    private int wonCount, lostCount;
-
 
     public DisplayPanel() {
         super(new GridLayout(2, 3, 10, 0));

@@ -1,8 +1,6 @@
 import java.awt.event.*;
 import javax.swing.*;
 
-// Represents a control panel for a craps "table"
-
 public class ControlPanel extends JPanel
         implements ActionListener {
     private AdventureTable table;

@@ -1,10 +1,10 @@
 public class Rooms {
 
-    int r = 0;
-    int c = 2;
-    int[] currentRoom = {r, c};
+    private final int r = 0;
+    private final int c = 2;
+    private int[] currentRoom = {r, c};
     AdventureDice game;
-    String[][] roomArray = {
+    private String[][] roomArray = {
             {"", "", "Entrance", "", "", "", ""},
             {"", "", "Ladder", "", "", "", ""},
             {"Sword in a stone", "Passage with a monster", "Rocky Room", "Blazing Fire", "Locked Green Door", "Red Monster", ""},
@@ -33,7 +33,7 @@ public class Rooms {
     }
 
     public void updateRoom(int directionX, int directionY) {
-        if (currentRoom[1] + directionX >= 0 && currentRoom[0] + directionY >= 0 && roomArray[currentRoom[0] + directionY][currentRoom[1] + directionX] != "") {
+        if (currentRoom[1] + directionX >= 0 && currentRoom[0] + directionY >= 0 && !roomArray[currentRoom[0] + directionY][currentRoom[1] + directionX].equals("")) {
             currentRoom[0] += directionY;
             currentRoom[1] += directionX;
             game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]]);
