@@ -25,4 +25,9 @@ public class AdventurePanel extends JPanel {
     public void changeText(String newText) {
         AdventureText.setText(newText);
     }
+
+    public void appendText(String newText) {
+        String oldText = AdventureText.getText();
+        AdventureText.setText(oldText + "\n" + newText);
+    }
 }

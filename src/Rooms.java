@@ -39,7 +39,7 @@ public class Rooms {
             game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]]);
         }
         else {
-            game.journey.changeText("You shall not pass!");
+            game.journey.appendText("You shall not pass!");
             //game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]]);
         }
     }
