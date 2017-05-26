@@ -7,30 +7,32 @@ public class Rooms {
     private String[][] roomArray = {
             {"", "", "Entrance", "", "", "", ""},
             {"", "", "Ladder", "", "", "", ""},
-            {"Sword in a stone", "Passage with a monster", "Rocky Room", "Blazing Fire", "Locked Green Door", "Red Monster", ""},
-            {"", "", "", "Unlocked Purple door", "", "", ""},
+            {"CHEST: SWORD: Sword in a stone", "MONSTER: Passage with a monster", "Rocky Room", "CHEST: RED Blazing Fire", "LOCKED: Locked Green Door", "MONSTER: Red Monster", ""},
+            {"", "", "", "Purple door", "", "", ""},
             {"", "", "", "Ladder going down", "", "", ""},
-            {"", "Room with a monster", "Tunnel", "Tall Room", "BookShelf", "Secret Room", ""},
+            {"", "MONSTER: Room with a monster", "Tunnel", "Tall Room", "LOCKED: BookShelf", "CHEST: RAINBOW: Secret Room", ""},
             {"", "", "", "Tunnel", "", "", ""},
-            {"Room with a monster", "Tunnel", "Tunnel", "Narrom Room", "Tunnel", "Tunnel", "Room with a monster"},
-            {"", "", "", "Locked Yellow Door", "", "", ""},
-            {"", "Room with a well", "Tunnel", "Long Room", "Tunnel", "Large Chest", ""},
+            {"MONSTER: Room with a monster", "Tunnel", "Tunnel", "Narrow Room", "Tunnel", "Tunnel", "MONSTER: Room with a monster"},
+            {"", "", "", "LOCKED: Locked Yellow Door", "", "", ""},
+            {"", "CHEST: WELL: Room with a well", "Tunnel", "Long Room", "Tunnel", "CHEST: ROLLS: Large Chest", ""},
             {"", "", "", "Tunnel", "", "", ""},
-            {"Golden Chest", "Damp Room", "Locked Door", "Smelly Room", "Locked Door", "Spike Pit", ""},
+            {"CHEST: SHIELD: Small Chest", "Damp Room", "LOCKED: Locked Purple Door", "Smelly Room", "LOCKED: Locked Orange Door", "SPIKE: Spike Pit", ""},
             {"", "Tunnel", "", "Tunnel", "", "", ""},
-            {"Bucket", "Puzzle Room", "", "Grey Monster", "", "", ""},
-            {"", "", "", "", "", "", ""},
-            {"", "", "", "", "", "", ""},
-            {"", "", "", "", "", "", ""},
-            {"", "", "", "", "", "", ""},
-            {"", "", "", "", "", "", ""},
-            {"", "", "", "", "", "", ""},
-            {"", "", "", "", "", "", ""},
+            {"BUCKET: Bucket", "Puzzle Room- \n A sign reads \" \n Those who enter must extinguish \n their fears with water from the \n depths of the earth\" ", "", "MONSTER: Grey Monster", "", "", ""},
+            {"", "KEY: RED: Locked Red Door", "", "", "", "", ""},
+            {"MONSTER: Dark-Gray Monster", "Big Room", "Tunnel", "MONSTER: Sea-Green Monster", "Tunnel", "MONSTER: Magenta Monster", "Blue Room"},
+            {"", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
+            {"", "MONSTER: Turquoise Monster", "Tunnel", "Tunnel", "MONSTER: Pink Monster", "", "MONSTER: Dark Green Monster"},
+            {"CHEST: HEALTH: Dark Red Chest", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
+            {"", "Tunnel", "", "Tunnel", "", "", "KEY: GOLD: Locked Gold Door"},
+            {"CHEST: GOLD: Gold Chest", "KEY: RAINBOW: Locked Rainbow Door", "Tunnel", "MONSTER: Burnt Orange Monster", "SPIKE: Spike Pit", "", "BOSS: A Giant Golden Dragon Lurks In A Vast Cavern"},
     };
 
     public Rooms(AdventureDice g) {
         game = g;
     }
+    
+    
 
     public void updateRoom(int directionX, int directionY) {
         if (currentRoom[1] + directionX >= 0 && currentRoom[0] + directionY >= 0 && !roomArray[currentRoom[0] + directionY][currentRoom[1] + directionX].equals("")) {

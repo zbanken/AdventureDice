@@ -23,8 +23,7 @@ public class AdventurePanel extends JPanel {
     }
 
     public void changeText(String newText) {
-        new Typewriter(newText, AdventureText);
-        //AdventureText.setText(newText);
+        AdventureText.setText(newText);
     }
 
     public void appendText(String newText) {
