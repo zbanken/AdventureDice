@@ -32,30 +32,49 @@ public class Rooms {
         game = g;
     }
     
-    public String readTag(String[][] roomArray)
+    public String[] readTags()
     {
-        int end = roomArray[r][c].indexOf(':');
-        System.out.println(""+end);
-        
-        int end2 = roomArray[r][c].lastIndexOf(':', end);
-        String tag = roomArray[r][c].substring(0,end);
-        
-        String tag2 = roomArray[r][c].substring(end,end2);
-        
-        return tag; 
+        int end = roomArray[currentRoom[0]][currentRoom[1]].indexOf(':');
+
+        if (end != -1) {
+            String[] tag = roomArray[currentRoom[0]][currentRoom[1]].substring(0,end).split(",");
+
+            return tag;
+        }
+        String[] NORMAL = {"NORM"};
+        return NORMAL;
+    }
+
+    public void callTags() {
+        String[] tags = readTags();
+
+        for(String tag : tags) {
+            switch (tag) {
+
+            }
+        }
     }
 
     public void updateRoom(int directionX, int directionY) {
         if (currentRoom[1] + directionX >= 0 && currentRoom[0] + directionY >= 0 && !roomArray[currentRoom[0] + directionY][currentRoom[1] + directionX].equals("")) {
             currentRoom[0] += directionY;
             currentRoom[1] += directionX;
-            game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]]);
+            callTags();
+            int end = roomArray[currentRoom[0]][currentRoom[1]].indexOf(':');
+            if (end != -1) {
+                game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]].substring(end + 1));
+            }
+            else {
+                game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]]);
+            }
         }
+        /*
         else {
             game.journey.appendText("You shall not pass!");
-            //game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]]);
+            for (String item : readTag()) {
+                game.journey.appendText(item);
+            }
         }
+        */
     }
-
-
 }
