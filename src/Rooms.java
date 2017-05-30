@@ -50,7 +50,8 @@ public class Rooms {
 
         for(String tag : tags) {
             switch (tag) {
-
+                case "MONSTER":
+                    //game.choice.disableButtons();
             }
         }
     }

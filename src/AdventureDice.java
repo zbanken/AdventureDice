@@ -8,15 +8,17 @@ public class AdventureDice extends JFrame {
     AdventurePanel journey;
     Rooms currentMap;
     ControlPanel controls;
+    ChoicePanel choice;
+    AdventureTable table;
 
     public AdventureDice() {
         super("AdventureDice");
 
         currentMap = new Rooms(this);
         display = new DisplayPanel();
-        AdventureTable table = new AdventureTable(display);
+        table = new AdventureTable(display);
         controls = new ControlPanel(table, this);
-        ChoicePanel choice = new ChoicePanel(currentMap);
+        choice = new ChoicePanel(currentMap);
         journey = new AdventurePanel();
 
         JPanel panel = new JPanel();
