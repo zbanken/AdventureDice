@@ -105,7 +105,7 @@ public class RollingDie extends Die {
     private void drawRolling(Graphics g) {
         int x = xCenter - dieSize / 2 + (int) (3 * Math.random()) - 1;
         int y = yCenter - dieSize / 2 + (int) (3 * Math.random()) - 1;
-        g.setColor(Color.decode("#7D26CD"));
+        g.setColor(Color.RED);
 
         if (x % 2 != 0)
             g.fillRoundRect(x, y, dieSize, dieSize, dieSize / 4, dieSize / 4);
@@ -121,7 +121,7 @@ public class RollingDie extends Die {
     private void drawStopped(Graphics g) {
         int x = xCenter - dieSize / 2;
         int y = yCenter - dieSize / 2;
-        g.setColor(Color.decode("#7D26CD"));
+        g.setColor(Color.RED.darker());
         g.fillRoundRect(x, y, dieSize, dieSize, dieSize / 4, dieSize / 4);
         drawDots(g, x, y, getNumDots());
     }

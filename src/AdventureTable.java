@@ -17,8 +17,8 @@ public class AdventureTable extends JPanel
   // Constructor
   public AdventureTable(DisplayPanel displ)
   {
-    setBackground(Color.decode("#0CD0CD"));
-    setBorder(new LineBorder(Color.ORANGE.darker(), 3));
+    setBackground(Color.GREEN.darker());
+    setBorder(new LineBorder(Color.BLACK, 3));
     display = displ;
     game = new AdventureGame();
     die1 = new RollingDie();

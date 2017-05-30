@@ -7,7 +7,7 @@ public class Rooms {
     private String[][] roomArray = {
             {"", "", "Entrance", "", "", "", ""},
             {"", "", "Ladder", "", "", "", ""},
-            {"CHEST,SWORD:Sword in a stone", "MONSTER:Passage with a monster", "Rocky Room", "CHEST:RED Blazing Fire", "LOCKED:Locked Green Door", "MONSTER:Red Monster", ""},
+            {"CHEST,SWORD:Sword in a stone", "MONSTER:Passage with a monster", "Rocky Room", "CHEST,RED: Blazing Fire", "LOCKED:Locked Green Door", "MONSTER:Red Monster", ""},
             {"", "", "", "Purple door", "", "", ""},
             {"", "", "", "Ladder going down", "", "", ""},
             {"", "MONSTER:Room with a monster", "Tunnel", "Tall Room", "LOCKED:BookShelf", "CHEST,RAINBOW: Secret Room", ""},
@@ -26,12 +26,12 @@ public class Rooms {
             {"CHEST,HEALTH:Dark Red Chest", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
             {"", "Tunnel", "", "Tunnel", "", "", "KEY,GOLD:Locked Gold Door"},
             {"CHEST,GOLD:Gold Chest", "KEY,RAINBOW:Locked Rainbow Door", "Tunnel", "MONSTER:Burnt Orange Monster", "SPIKE:Spike Pit", "", "MONSTER,BOSS:A Giant Golden Dragon Lurks In A Vast Cavern"},
-    };
+        };
 
     public Rooms(AdventureDice g) {
         game = g;
     }
-    
+
     public String[] readTags()
     {
         int end = roomArray[currentRoom[0]][currentRoom[1]].indexOf(':');
@@ -68,13 +68,13 @@ public class Rooms {
                 game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]]);
             }
         }
-        /*
+
         else {
             game.journey.appendText("You shall not pass!");
-            for (String item : readTag()) {
-                game.journey.appendText(item);
-            }
+            //             for (String item : readTag()) {
+            //                 game.journey.appendText(item);
+            //}
         }
-        */
+
     }
 }

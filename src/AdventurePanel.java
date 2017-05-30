@@ -13,7 +13,7 @@ public class AdventurePanel extends JPanel {
         super(new GridLayout(1, 3, 10, 10));
         setBorder(new EmptyBorder(0, 0, 5, 0));
 
-        Font displayFont = new Font("Monospaced", Font.PLAIN, 11);
+        Font displayFont = new Font("Monospaced", Font.PLAIN, 24);
 
         AdventureText = new JTextArea("");
         AdventureText.setFont(displayFont);

@@ -10,25 +10,25 @@ public class ControlPanel extends JPanel
     public ControlPanel(AdventureTable t, AdventureDice d) {
         table = t;
         parent = d;
-        JButton rollButton = new JButton("Roll 1");
-        JButton roll2Button = new JButton("Roll 2");
-        rollButton.setActionCommand("1Die");
-        roll2Button.setActionCommand("2Die");
-        rollButton.addActionListener(this);
-        roll2Button.addActionListener(this);
-        add(rollButton);
-        add(roll2Button);
+        JButton fightButton = new JButton("Fight");
+        JButton runAwayButton = new JButton("Run Away");
+        fightButton.setActionCommand("Fight");
+        runAwayButton.setActionCommand("Run Away");
+        fightButton.addActionListener(this);
+        runAwayButton.addActionListener(this);
+        add(fightButton);
+        add(runAwayButton);
     }
 
     // Called when the roll button is clicked
     public void actionPerformed(ActionEvent e) {
         if (!table.diceAreRolling())
-            if (e.getActionCommand().equals("1Die")) {
+            if (e.getActionCommand().equals("Fight")) {
                 table.rollDice();
                 parent.getDisplay().update(1, 1, e);
-            } else if (e.getActionCommand().equals("2Die")) {
-                table.rollTwoDice();
-                parent.getDisplay().update(1, 1, e);
+            } else if (e.getActionCommand().equals("Run Away")) {
+                
+                
             }
     }
 }
