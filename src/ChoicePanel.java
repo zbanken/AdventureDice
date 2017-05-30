@@ -7,6 +7,11 @@ implements ActionListener
 {
     private Rooms map;
 
+    JButton northButton = new JButton("NORTH");
+    JButton southButton = new JButton("SOUTH");
+    JButton eastButton = new JButton("EAST");
+    JButton westButton = new JButton("WEST");
+
     // Constructor
     public ChoicePanel(Rooms currentMap)
     {
@@ -14,33 +19,42 @@ implements ActionListener
         setLayout(new GridLayout(0,3));
         add(new JPanel());
         //add(new JButton("NORTH"));
-        JButton northButton = new JButton("NORTH");
         northButton.setActionCommand("NORTH");
         northButton.addActionListener(this);
         add(northButton);
 
         add(new JPanel());
         //add(new JButton("WEST"));
-        JButton westButton = new JButton("WEST");
         westButton.setActionCommand("WEST");
         westButton.addActionListener(this);
         add(westButton);
 
         add(new JPanel());
         //add(new JButton("EAST"));
-        JButton eastButton = new JButton("EAST");
         eastButton.setActionCommand("EAST");
         eastButton.addActionListener(this);
         add(eastButton);
 
         add(new JPanel());
         //add(new JButton("SOUTH"));
-        JButton southButton = new JButton("SOUTH");
         southButton.setActionCommand("SOUTH");
         southButton.addActionListener(this);
         add(southButton);
         
         add(new JPanel());
+    }
+
+    public void disableButtons() {
+        northButton.setEnabled(false);
+        southButton.setEnabled(false);
+        eastButton.setEnabled(false);
+        westButton.setEnabled(false);
+    }
+    public void enableButtons() {
+        northButton.setEnabled(true);
+        southButton.setEnabled(true);
+        eastButton.setEnabled(true);
+        westButton.setEnabled(true);
     }
 
     // Called when the roll button is clicked
