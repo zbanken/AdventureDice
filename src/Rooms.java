@@ -50,8 +50,46 @@ public class Rooms {
 
         for(String tag : tags) {
             switch (tag) {
+                // Parent Classes
                 case "MONSTER":
+                    // Locks Room Till Defeat
                     //game.choice.disableButtons();
+                    continue;
+                case "CHEST":
+                    // Opens Chest
+                    continue;
+                case "LOCKED":
+                    // Roll to unlock
+                    continue;
+                case "KEY":
+                    // Requires Key
+                    continue;
+
+                // Colors
+                case "RED":
+                    continue;
+                case "RAINBOW":
+                    continue;
+                case "GOLD":
+                    continue;
+
+                // Items
+                case "SWORD":
+                    continue;
+                case "WELL":
+                    continue;
+                case "ROLLS":
+                    continue;
+                case "SHIELD":
+                    continue;
+                case "SPIKE":
+                    continue;
+                case "BUCKET":
+                    continue;
+                case "HEALTH":
+                    continue;
+                case "BOSS":
+                    continue;
             }
         }
     }
