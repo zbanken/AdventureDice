@@ -6,27 +6,27 @@ public class Rooms {
     private int[] lastRoom = {r, c};
     AdventureDice game;
     private String[][] roomArray = {
-            {"", "", "Entrance", "", "", "", ""},
-            {"", "", "Ladder", "", "", "", ""},
-            {"CHEST,SWORD:Sword in a stone", "MONSTER:Passage with a monster", "Rocky Room", "CHEST,RED: Blazing Fire", "LOCKED:Locked Green Door", "MONSTER:Red Monster", ""},
+            {"", "", "Entrance- Are you ready?", "", "", "", ""},
+            {"", "", "Ladder- Darkness Lies Ahead", "", "", "", ""},
+            {"CHEST,SWORD:A fiery sword is embedded in a \nblock of granite", "MONSTER:An amethyst rabbit guards \nthe end of the passage","\"Ouch!\" your head hits a\n low hanging stalagtite", "CHEST,RED: A blazing fire fills \nthe room with smoke", "LOCKED:There's a locked green \ndoor to your east", "MONSTER:Red Monster", ""},
             {"", "", "", "Purple door", "", "", ""},
             {"", "", "", "Ladder going down", "", "", ""},
-            {"", "MONSTER:Room with a monster", "Tunnel", "Tall Room", "LOCKED:BookShelf", "CHEST,RAINBOW: Secret Room", ""},
+            {"", "MONSTER:Room with a smoky grey monster", "Tunnel", "Tall Room- the ceiling is\n hidden in darkness", "LOCKED:A surprisingly normal bookshelf is ", "CHEST,RAINBOW: Secret Rainbow Room- for some reason, violet\n is missing from the \nrainbow", ""},
             {"", "", "", "Tunnel", "", "", ""},
-            {"MONSTER:Room with a monster", "Tunnel", "Tunnel", "Narrow Room", "Tunnel", "Tunnel", "MONSTER:Room with a monster"},
-            {"", "", "", "LOCKED:Locked Yellow Door", "", "", ""},
-            {"", "CHEST,WELL:Room with a well", "Tunnel", "Long Room", "Tunnel", "CHEST,ROLLS:Large Chest", ""},
+            {"MONSTER:Room with a \ntulip orange monster", "Tunnel", "Tunnel", "Narrow Room- \nyou can barely \nfit through", "Tunnel", "Tunnel", "MONSTER:Room with a pine \ngreen monster"},
+            {"", "", "", "LOCKED:Locked Banana Yellow Door", "", "", ""},
+            {"", "CHEST,WELL:Room with a well- \n \"You fool of a Took!\" ", "Tunnel", "Long Room- \n the room stretches out \n to infinity...", "Tunnel", "CHEST,ROLLS:Large Chest filled with \ninfinite-sided dice", ""},
             {"", "", "", "Tunnel", "", "", ""},
-            {"CHEST,SHIELD:Small Chest", "Damp Room", "LOCKED:Locked Purple Door", "Smelly Room", "LOCKED:Locked Orange Door", "SPIKE:Spike Pit", ""},
+            {"CHEST,SHIELD:Small Chest \n made from coconut husks", "Damp Room- \nyour boots are \nsoaking wet", "LOCKED:Locked Purple Door", "Smelly Room- \n it smells like\n uneaten breakfast", "LOCKED:Locked Sunset-Orange Door", "SPIKE:Spike Pit", ""},
             {"", "Tunnel", "", "Tunnel", "", "", ""},
-            {"BUCKET:Bucket", "Puzzle Room- \n A sign reads \" \n Those who enter must extinguish \n their fears with water from the \n depths of the earth\" ", "", "MONSTER:Grey Monster", "", "", ""},
+            {"BUCKET:\"There is a bucket\" \n *in the distance* \n Dear God...", "Puzzle Room- \n A sign reads\n \"Those who enter must extinguish \n their fears with water from the \n depths of the earth\" ", "", "MONSTER:A very Grey Monster", "", "", ""},
             {"", "KEY,RED:Locked Red Door", "", "", "", "", ""},
-            {"MONSTER:Dark-Gray Monster", "Big Room", "Tunnel", "MONSTER:Sea-Green Monster", "Tunnel", "MONSTER:Magenta Monster", "Blue Room"},
+            {"MONSTER:Dark-Gray Monster", "Echo Room", "Tunnel", "MONSTER:Sea-Green Monster", "Tunnel", "MONSTER:Magenta Monster", "Winter-Wizard-Blue Room"},
             {"", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
             {"", "MONSTER:Turquoise Monster", "Tunnel", "Tunnel", "MONSTER:Pink Monster", "", "MONSTER:Dark Green Monster"},
             {"CHEST,HEALTH:Dark Red Chest", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
             {"", "Tunnel", "", "Tunnel", "", "", "KEY,GOLD:Locked Gold Door"},
-            {"CHEST,GOLD:Gold Chest", "KEY,RAINBOW:Locked Rainbow Door", "Tunnel", "MONSTER:Burnt Orange Monster", "SPIKE:Spike Pit", "", "MONSTER,BOSS:A Giant Golden Dragon Lurks In A Vast Cavern"},
+            {"CHEST,GOLD:Gold Chest", "KEY,RAINBOW:Locked Rainbow Door", "Tunnel", "MONSTER:Burnt Orange Monster- \n Is it a *Burnt*\n Orange Monster, Or a \n *Burnt Orange* Monster?", "SPIKE:Spike Pit", "", "MONSTER,BOSS:A Giant Cavern Lurks\n In A Vast Golden Dragon \n \"Do you think flattery \n will keep you alive?\""},
         };
 
     public Rooms(AdventureDice g) {
