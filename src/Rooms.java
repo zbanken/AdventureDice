@@ -3,6 +3,7 @@ public class Rooms {
     private final int r = 0;
     private final int c = 2;
     private int[] currentRoom = {r, c};
+    private int[] lastRoom = {r, c};
     AdventureDice game;
     private String[][] roomArray = {
             {"", "", "Entrance", "", "", "", ""},
@@ -53,7 +54,8 @@ public class Rooms {
                 // Parent Classes
                 case "MONSTER":
                     // Locks Room Till Defeat
-                    //game.choice.disableButtons();
+                    game.choice.disableButtons();
+                    game.controls.enableButtons();
                     continue;
                 case "CHEST":
                     // Opens Chest
@@ -96,6 +98,7 @@ public class Rooms {
 
     public void updateRoom(int directionX, int directionY) {
         if (currentRoom[1] + directionX >= 0 && currentRoom[0] + directionY >= 0 && !roomArray[currentRoom[0] + directionY][currentRoom[1] + directionX].equals("")) {
+            lastRoom = currentRoom;
             currentRoom[0] += directionY;
             currentRoom[1] += directionX;
             callTags();
@@ -114,6 +117,17 @@ public class Rooms {
             //                 game.journey.appendText(item);
             //}
         }
+    }
 
+    public void gotoLastRoom() {
+        currentRoom = lastRoom;
+        callTags();
+        int end = roomArray[currentRoom[0]][currentRoom[1]].indexOf(':');
+        if (end != -1) {
+            game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]].substring(end + 1));
+        }
+        else {
+            game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]]);
+        }
     }
 }

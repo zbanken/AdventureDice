@@ -5,15 +5,18 @@ public class ControlPanel extends JPanel
         implements ActionListener {
     private AdventureTable table;
     private AdventureDice parent;
+    private JButton fightButton, runAwayButton;
 
     // Constructor
     public ControlPanel(AdventureTable t, AdventureDice d) {
         table = t;
         parent = d;
-        JButton fightButton = new JButton("Fight");
-        JButton runAwayButton = new JButton("Run Away");
+        fightButton = new JButton("Fight");
+        runAwayButton = new JButton("Run Away");
         fightButton.setActionCommand("Fight");
         runAwayButton.setActionCommand("Run Away");
+        fightButton.setEnabled(false);
+        runAwayButton.setEnabled(false);
         fightButton.addActionListener(this);
         runAwayButton.addActionListener(this);
         add(fightButton);
@@ -30,5 +33,14 @@ public class ControlPanel extends JPanel
                 
                 
             }
+    }
+
+    public void disableButtons() {
+        fightButton.setEnabled(false);
+        runAwayButton.setEnabled(false);
+    }
+    public void enableButtons() {
+        fightButton.setEnabled(true);
+        runAwayButton.setEnabled(true);
     }
 }

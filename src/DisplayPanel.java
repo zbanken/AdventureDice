@@ -39,19 +39,11 @@ public class DisplayPanel extends JPanel {
 
         if (rolls > 0) {
 
-            if (e.getActionCommand().equals("1Die")) {
+            if (e.getActionCommand().equals("Fight")) {
                 rolls = rolls - 1;
                 String currentRolls = rolls + "";
                 rollsText.setText(currentRolls);
             }
         }
-        if (rolls > 1) {
-            if (e.getActionCommand().equals("2Die")) {
-                rolls = rolls - 2;
-                String currentRolls2 = rolls + "";
-                rollsText.setText(currentRolls2);
-            }
-        }
-
     }
 }
