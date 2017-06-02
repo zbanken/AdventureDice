@@ -15,7 +15,7 @@ public class AdventureDice extends JFrame {
     public AdventureDice() {
         super("AdventureDice");
 
-        audio = new audio("Theme.mp3").play();
+        audio = new EasySound("Theme.mp3");
         currentMap = new Rooms(this);
         display = new DisplayPanel();
         table = new AdventureTable(display);
