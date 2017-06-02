@@ -10,10 +10,12 @@ public class AdventureDice extends JFrame {
     ControlPanel controls;
     ChoicePanel choice;
     AdventureTable table;
+    EasySound audio;
 
     public AdventureDice() {
         super("AdventureDice");
 
+        audio = new audio("Theme.mp3").play();
         currentMap = new Rooms(this);
         display = new DisplayPanel();
         table = new AdventureTable(display);

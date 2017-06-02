@@ -19,7 +19,7 @@ public class Rooms {
             {"", "", "", "Tunnel", "", "", ""},
             {"CHEST,SHIELD:Small Chest \n made from coconut husks", "Damp Room- \nyour boots are \nsoaking wet", "LOCKED:Locked Purple Door", "Smelly Room- \n it smells like\n uneaten breakfast", "LOCKED:Locked Sunset-Orange Door", "SPIKE:Spike Pit", ""},
             {"", "Tunnel", "", "Tunnel", "", "", ""},
-            {"BUCKET:\"There is a bucket\" \n *in the distance* \n Dear God...", "Puzzle Room- \n A sign reads\n \"Those who enter must extinguish \n their fears with water from the \n depths of the earth\" ", "", "MONSTER:A very Grey Monster", "", "", ""},
+            {"BUCKET:\"This is a bucket\" \n *in the distance* \n \"Dear God...\"", "Puzzle Room- \n A sign reads\n \"Those who enter must extinguish \n their fears with water from the \n depths of the earth\" ", "", "MONSTER:A very Grey Monster", "", "", ""},
             {"", "KEY,RED:Locked Red Door", "", "", "", "", ""},
             {"MONSTER:Dark-Gray Monster", "Echo Room", "Tunnel", "MONSTER:Sea-Green Monster", "Tunnel", "MONSTER:Magenta Monster", "Winter-Wizard-Blue Room"},
             {"", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
