@@ -15,8 +15,7 @@ public class ControlPanel extends JPanel
         runAwayButton = new JButton("Run Away");
         fightButton.setActionCommand("Fight");
         runAwayButton.setActionCommand("Run Away");
-        fightButton.setEnabled(false);
-        runAwayButton.setEnabled(false);
+        disableButtons();
         fightButton.addActionListener(this);
         runAwayButton.addActionListener(this);
         add(fightButton);
@@ -30,8 +29,9 @@ public class ControlPanel extends JPanel
                 table.rollDice();
                 parent.getDisplay().update(1, 1, e);
             } else if (e.getActionCommand().equals("Run Away")) {
-                
-                
+                parent.currentMap.gotoLastRoom();
+                disableButtons();
+                parent.choice.enableButtons();
             }
     }
 

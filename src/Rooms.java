@@ -56,7 +56,6 @@ public class Rooms {
                     // Locks Room Till Defeat
                     game.choice.disableButtons();
                     game.controls.enableButtons();
-                    continue;
                 case "CHEST":
                     // Opens Chest
                     continue;
@@ -98,7 +97,8 @@ public class Rooms {
 
     public void updateRoom(int directionX, int directionY) {
         if (currentRoom[1] + directionX >= 0 && currentRoom[0] + directionY >= 0 && !roomArray[currentRoom[0] + directionY][currentRoom[1] + directionX].equals("")) {
-            lastRoom = currentRoom;
+            lastRoom[0] = currentRoom[0];
+            lastRoom[1] = currentRoom[1];
             currentRoom[0] += directionY;
             currentRoom[1] += directionX;
             callTags();
@@ -120,7 +120,8 @@ public class Rooms {
     }
 
     public void gotoLastRoom() {
-        currentRoom = lastRoom;
+        currentRoom[0] = lastRoom[0];
+        currentRoom[1] = lastRoom[1];
         callTags();
         int end = roomArray[currentRoom[0]][currentRoom[1]].indexOf(':');
         if (end != -1) {
