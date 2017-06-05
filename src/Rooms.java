@@ -19,7 +19,7 @@ public class Rooms {
             {"", "", "", "Tunnel", "", "", ""},
             {"CHEST,SHIELD:Small Chest \n made from coconut husks", "Damp Room- \nyour boots are \nsoaking wet", "LOCKED:Locked Purple Door", "Smelly Room- \n it smells like\n uneaten breakfast", "LOCKED:Locked Sunset-Orange Door", "SPIKE:Spike Pit", ""},
             {"", "Tunnel", "", "Tunnel", "", "", ""},
-            {"BUCKET:\"This is a bucket\" \n *in the distance* \n \"Dear God...\"", "Puzzle Room- \n A sign reads\n \"Those who enter must extinguish \n their fears with water from the \n depths of the earth\" ", "", "MONSTER:A very Grey Monster", "", "", ""},
+            {"BUCKET:\"There is a bucket\" \n *in the distance* \n Dear God...", "Puzzle Room- \n A sign reads\n \"Those who enter must extinguish \n their fears with water from the \n depths of the earth\" ", "", "MONSTER:A very Grey Monster", "", "", ""},
             {"", "KEY,RED:Locked Red Door", "", "", "", "", ""},
             {"MONSTER:Dark-Gray Monster", "Echo Room", "Tunnel", "MONSTER:Sea-Green Monster", "Tunnel", "MONSTER:Magenta Monster", "Winter-Wizard-Blue Room"},
             {"", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
@@ -53,44 +53,57 @@ public class Rooms {
             switch (tag) {
                 // Parent Classes
                 case "MONSTER":
-                    // Locks Room Till Defeat
-                    game.choice.disableButtons();
-                    game.controls.enableButtons();
+                // Locks Room Till Defeat
+                game.choice.disableButtons();
+                game.controls.enableButtons();
+                if (game.table.getNumDots()== 1 || game.table.getNumDots()== 2 )
+                {
+                    healthText.setText(healthText.getText() - 5);
+                } else if (game.table.getNumDots()== 3)
+                {
+                    healthText.setText(healthText.getText() - 10);
+                } else
+                {
+                    
+                }
                 case "CHEST":
-                    // Opens Chest
-                    continue;
+                if (game.table.getNumDots()== 1 || game.table.getNumDots()== 2 )
+                {
+                    healthText.setText(healthText.getText() - 5);
+                }
+                continue;
                 case "LOCKED":
-                    // Roll to unlock
-                    continue;
+                // Roll to unlock
+                continue;
                 case "KEY":
-                    // Requires Key
-                    continue;
+                // Requires Key
+                continue;
 
                 // Colors
                 case "RED":
-                    continue;
+                continue;
                 case "RAINBOW":
-                    continue;
+                continue;
                 case "GOLD":
-                    continue;
+                continue;
 
                 // Items
                 case "SWORD":
-                    continue;
+                continue;
                 case "WELL":
-                    continue;
+                continue;
                 case "ROLLS":
-                    continue;
+                continue;
                 case "SHIELD":
-                    continue;
+                continue;
                 case "SPIKE":
-                    continue;
+                continue;
                 case "BUCKET":
-                    continue;
+                continue;
                 case "HEALTH":
-                    continue;
+                continue;
                 case "BOSS":
-                    continue;
+                continue;
             }
         }
     }
