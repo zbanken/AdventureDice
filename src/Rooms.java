@@ -69,7 +69,7 @@ public class Rooms {
                 case "CHEST":
                 if (game.table.getNumDots()== 1 || game.table.getNumDots()== 2 )
                 {
-                    healthText.setText(healthText.getText() - 5);
+                    
                 }
                 continue;
                 case "LOCKED":

@@ -1,6 +1,8 @@
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.GridLayout;
+import sun.audio.*;
+import java.io.*;
 
 public class ChoicePanel extends JPanel 
 implements ActionListener 
@@ -40,7 +42,7 @@ implements ActionListener
         southButton.setActionCommand("SOUTH");
         southButton.addActionListener(this);
         add(southButton);
-        
+
         add(new JPanel());
     }
 
@@ -50,6 +52,7 @@ implements ActionListener
         eastButton.setEnabled(false);
         westButton.setEnabled(false);
     }
+
     public void enableButtons() {
         northButton.setEnabled(true);
         southButton.setEnabled(true);
@@ -73,5 +76,22 @@ implements ActionListener
             map.updateRoom(-1, 0);
         }
     }
+
+    public void directionMusic()
+    {
+        AudioPlayer MGP = AudioPlayer.player;
+        AudioStream BGM;
+        AudioData MD;
+        ContinuousAudioDataStream loop = null;
+        try{
+            BGM = new AudioStream(new FileInputStream("direction.wav"));
+            MD = BGM.getData();
+            loop = new ContinuousAudioDataStream(MD);
+        }catch(IOException error){
+        MGP.start(loop);
+        }
+    }
+
 }
+
 
