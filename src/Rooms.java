@@ -56,12 +56,13 @@ public class Rooms {
                 // Locks Room Till Defeat
                 game.choice.disableButtons();
                 game.controls.enableButtons();
+                /*
                 if (game.table.getNumDots()== 1 || game.table.getNumDots()== 2 )
                 {
-                    healthText.setText(healthText.getText() - 5);
+                    game.display.healthText.setText(String.valueOf(Integer.valueOf(game.display.healthText.getText()) - 5));
                 } else if (game.table.getNumDots()== 3)
                 {
-                    healthText.setText(healthText.getText() - 10);
+                    game.display.healthText.setText(String.valueOf(Integer.valueOf(game.display.healthText.getText()) - 10));
                 } else
                 {
                     
@@ -69,8 +70,9 @@ public class Rooms {
                 case "CHEST":
                 if (game.table.getNumDots()== 1 || game.table.getNumDots()== 2 )
                 {
-                    
+                    game.display.healthText.setText(String.valueOf(Integer.parseInt(game.display.healthText.getText()) - 5));
                 }
+                */
                 continue;
                 case "LOCKED":
                 // Roll to unlock

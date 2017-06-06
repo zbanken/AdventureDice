@@ -6,7 +6,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.event.*;
 
 public class DisplayPanel extends JPanel {
-    private JTextField rollsText, healthText;
+    public JTextField rollsText, healthText;
 
     public DisplayPanel() {
         super(new GridLayout(2, 3, 10, 0));

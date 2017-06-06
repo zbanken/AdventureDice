@@ -76,22 +76,6 @@ implements ActionListener
             map.updateRoom(-1, 0);
         }
     }
-
-    public void directionMusic()
-    {
-        AudioPlayer MGP = AudioPlayer.player;
-        AudioStream BGM;
-        AudioData MD;
-        ContinuousAudioDataStream loop = null;
-        try{
-            BGM = new AudioStream(new FileInputStream("direction.wav"));
-            MD = BGM.getData();
-            loop = new ContinuousAudioDataStream(MD);
-        }catch(IOException error){
-        MGP.start(loop);
-        }
-    }
-
 }
 
 
