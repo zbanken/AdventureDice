@@ -4,6 +4,7 @@ public class Rooms {
     private final int c = 2;
     private int[] currentRoom = {r, c};
     private int[] lastRoom = {r, c};
+    boolean almostDead = false;
     AdventureDice game;
     private String[][] roomArray = {
             {"", "", "Entrance- Are you ready?", "", "", "", ""},
@@ -19,7 +20,7 @@ public class Rooms {
             {"", "", "", "Tunnel", "", "", ""},
             {"CHEST,SHIELD:Small Chest \n made from coconut husks", "Damp Room- \nyour boots are \nsoaking wet", "LOCKED:Locked Purple Door", "Smelly Room- \n it smells like\n uneaten breakfast", "LOCKED:Locked Sunset-Orange Door", "SPIKE:Spike Pit", ""},
             {"", "Tunnel", "", "Tunnel", "", "", ""},
-            {"BUCKET:\"There is a bucket\" \n *in the distance* \n Dear God...", "Puzzle Room- \n A sign reads\n \"Those who enter must extinguish \n their fears with water from the \n depths of the earth\" ", "", "MONSTER:A very Grey Monster", "", "", ""},
+            {"BUCKET:\"This is a bucket\" \n *in the distance* \n \"Dear God...\"", "Puzzle Room- \n A sign reads\n \"Those who enter must extinguish \n their fears with water from the \n depths of the earth\" ", "", "MONSTER:A very Grey Monster", "", "", ""},
             {"", "KEY,RED:Locked Red Door", "", "", "", "", ""},
             {"MONSTER:Dark-Gray Monster", "Echo Room", "Tunnel", "MONSTER:Sea-Green Monster", "Tunnel", "MONSTER:Magenta Monster", "Winter-Wizard-Blue Room"},
             {"", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
@@ -27,7 +28,7 @@ public class Rooms {
             {"CHEST,HEALTH:Dark Red Chest", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
             {"", "Tunnel", "", "Tunnel", "", "", "KEY,GOLD:Locked Gold Door"},
             {"CHEST,GOLD:Gold Chest", "KEY,RAINBOW:Locked Rainbow Door", "Tunnel", "MONSTER:Burnt Orange Monster- \n Is it a *Burnt*\n Orange Monster, Or a \n *Burnt Orange* Monster?", "SPIKE:Spike Pit", "", "MONSTER,BOSS:A Giant Cavern Lurks\n In A Vast Golden Dragon \n \"Do you think flattery \n will keep you alive?\""},
-        };
+    };
 
     public Rooms(AdventureDice g) {
         game = g;
@@ -45,80 +46,81 @@ public class Rooms {
         return NORMAL;
     }
 
-    boolean almostDead = false;
-    
     public void callTags() {
         String[] tags = readTags();
         int roll = game.table.updateRoll();
-        
+
         //int roll = currentRoll;
         for (String tag : tags) {
-            
             switch (tag) {
                 // Parent Classes
                 case "MONSTER":
-                // Locks Room Till Defeat
-                game.choice.disableButtons();
-                game.controls.enableButtons();
-                if (roll == 1 || roll == 2) {
-                    game.display.addHealth(-5);
-                }
-                else if (roll == 3) {
-                    game.display.addHealth(-10);
-                }
-                else if (roll == 6 || roll == 5 || roll == 4){
-                    if (almostDead == true)
-                    {
-                        game.journey.changeText("The monster is dead");
-                        game.controls.disableButtons();
-                        game.choice.enableButtons();
+                    // Locks Room Till Defeat
+                    game.choice.disableButtons();
+                    game.controls.enableButtons();
+                    if (roll == 1 || roll == 2) {
+                        game.display.addHealth(-5);
+                    } else if (roll == 3) {
+                        game.display.addHealth(-10);
+                    } else if (roll == 6 || roll == 5 || roll == 4) {
+                        if (almostDead == true) {
+                            game.journey.changeText("The monster is dead");
+                            game.controls.disableButtons();
+                            game.choice.enableButtons();
+                            changeTag("MONSTER", "DEAD");
+                        } else {
+                            game.journey.changeText("The monster is almost dead");
+                            almostDead = true;
+                        }
                     }
-                    else {
-                        game.journey.changeText("The monster is almost dead");
-                        almostDead = true;
-                    }
-                }
-                break;
+                    break;
                 case "CHEST":
-                break;
+                    break;
                 case "LOCKED":
-                // Roll to unlock
-                break;
+                    // Roll to unlock
+                    break;
                 case "KEY":
-                // Requires Key
-                break;
+                    // Requires Key
+                    break;
+                case "DEAD":
+                    break;
 
                 // Colors
                 case "RED":
-                break;
+                    break;
                 case "RAINBOW":
-                break;
+                    break;
                 case "GOLD":
-                break;
+                    break;
 
                 // Items
                 case "SWORD":
-                break;
+                    break;
                 case "WELL":
-                break;
+                    break;
                 case "ROLLS":
-                break;
+                    break;
                 case "SHIELD":
-                break;
+                    break;
                 case "SPIKE":
-                break;
+                    break;
                 case "BUCKET":
-                break;
+                    break;
                 case "HEALTH":
-                break;
+                    break;
                 case "BOSS":
-                break;
+                    break;
             }
         }
     }
 
+    public void changeTag(String oldTag, String newTag) {
+        roomArray[currentRoom[0]][currentRoom[1]] = roomArray[currentRoom[0]][currentRoom[1]].replace(oldTag, newTag);
+    }
+
     public void updateRoom(int directionX, int directionY) {
         if (currentRoom[1] + directionX >= 0 && currentRoom[0] + directionY >= 0 && !roomArray[currentRoom[0] + directionY][currentRoom[1] + directionX].equals("")) {
+            almostDead = false;
             lastRoom[0] = currentRoom[0];
             lastRoom[1] = currentRoom[1];
             currentRoom[0] += directionY;
