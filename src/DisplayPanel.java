@@ -6,7 +6,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.event.*;
 
 public class DisplayPanel extends JPanel {
-    public JTextField rollsText, healthText;
+    private JTextField rollsText, healthText;
 
     public DisplayPanel() {
         super(new GridLayout(2, 3, 10, 0));
@@ -30,15 +30,26 @@ public class DisplayPanel extends JPanel {
         add(healthText);
     }
 
+    public boolean checkHealth() {
+        if (Integer.valueOf(healthText.getText()) <= 0) {
+            return false;
+        }
+        return true;
+    }
+
+    public void addHealth(int add) {
+        if (Integer.valueOf(healthText.getText())+add > 0) {
+            healthText.setText(String.valueOf(Integer.valueOf(healthText.getText()) + add));
+        }
+        else {
+            healthText.setText("0");
+        }
+    }
+
     int rolls = 100;
 
-    public void update(int result, int point, ActionEvent e) {
-        //if(rolls < 0)
-        //   rollsText.setText("0");
-
-
+    public void update(ActionEvent e) {
         if (rolls > 0) {
-
             if (e.getActionCommand().equals("Fight")) {
                 rolls = rolls - 1;
                 String currentRolls = rolls + "";

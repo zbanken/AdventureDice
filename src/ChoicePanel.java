@@ -8,6 +8,7 @@ public class ChoicePanel extends JPanel
 implements ActionListener 
 {
     private Rooms map;
+    private EasySound buttons;
 
     JButton northButton = new JButton("NORTH");
     JButton southButton = new JButton("SOUTH");
@@ -15,8 +16,9 @@ implements ActionListener
     JButton westButton = new JButton("WEST");
 
     // Constructor
-    public ChoicePanel(Rooms currentMap)
+    public ChoicePanel(Rooms currentMap, EasySound sound)
     {
+        buttons = sound;
         map = currentMap;
         setLayout(new GridLayout(0,3));
         add(new JPanel());
@@ -63,6 +65,7 @@ implements ActionListener
     // Called when the roll button is clicked
     public void actionPerformed(ActionEvent e)
     {
+        //buttons.playMusic("/Users/scrufulufugus/Developer/APCS/AdventureDice/src/Beep1.wav");
         if (e.getActionCommand().equals("NORTH")) {
             map.updateRoom(0, -1);
         }

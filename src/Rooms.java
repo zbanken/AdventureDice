@@ -8,7 +8,7 @@ public class Rooms {
     private String[][] roomArray = {
             {"", "", "Entrance- Are you ready?", "", "", "", ""},
             {"", "", "Ladder- Darkness Lies Ahead", "", "", "", ""},
-            {"CHEST,SWORD:A fiery sword is embedded in a \nblock of granite", "MONSTER:An amethyst rabbit guards \nthe end of the passage","\"Ouch!\" your head hits a\n low hanging stalagtite", "CHEST,RED: A blazing fire fills \nthe room with smoke", "LOCKED:There's a locked green \ndoor to your east", "MONSTER:Red Monster", ""},
+            {"CHEST,SWORD:A fiery sword is embedded in a \nblock of granite", "MONSTER:An amethyst rabbit guards \nthe end of the passage", "\"Ouch!\" your head hits a\n low hanging stalagtite", "CHEST,RED: A blazing fire fills \nthe room with smoke", "LOCKED:There's a locked green \ndoor to your east", "MONSTER:Red Monster", ""},
             {"", "", "", "Purple door", "", "", ""},
             {"", "", "", "Ladder going down", "", "", ""},
             {"", "MONSTER:Room with a smoky grey monster", "Tunnel", "Tall Room- the ceiling is\n hidden in darkness", "LOCKED:A surprisingly normal bookshelf is ", "CHEST,RAINBOW: Secret Rainbow Room- for some reason, violet\n is missing from the \nrainbow", ""},
@@ -27,18 +27,17 @@ public class Rooms {
             {"CHEST,HEALTH:Dark Red Chest", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
             {"", "Tunnel", "", "Tunnel", "", "", "KEY,GOLD:Locked Gold Door"},
             {"CHEST,GOLD:Gold Chest", "KEY,RAINBOW:Locked Rainbow Door", "Tunnel", "MONSTER:Burnt Orange Monster- \n Is it a *Burnt*\n Orange Monster, Or a \n *Burnt Orange* Monster?", "SPIKE:Spike Pit", "", "MONSTER,BOSS:A Giant Cavern Lurks\n In A Vast Golden Dragon \n \"Do you think flattery \n will keep you alive?\""},
-        };
+    };
 
     public Rooms(AdventureDice g) {
         game = g;
     }
 
-    public String[] readTags()
-    {
+    public String[] readTags() {
         int end = roomArray[currentRoom[0]][currentRoom[1]].indexOf(':');
 
         if (end != -1) {
-            String[] tag = roomArray[currentRoom[0]][currentRoom[1]].substring(0,end).split(",");
+            String[] tag = roomArray[currentRoom[0]][currentRoom[1]].substring(0, end).split(",");
 
             return tag;
         }
@@ -48,64 +47,59 @@ public class Rooms {
 
     public void callTags() {
         String[] tags = readTags();
-
-        for(String tag : tags) {
+        int roll = game.table.updateRoll();
+        //int roll = currentRoll;
+        for (String tag : tags) {
             switch (tag) {
                 // Parent Classes
                 case "MONSTER":
-                // Locks Room Till Defeat
-                game.choice.disableButtons();
-                game.controls.enableButtons();
-                /*
-                if (game.table.getNumDots()== 1 || game.table.getNumDots()== 2 )
-                {
-                    game.display.healthText.setText(String.valueOf(Integer.valueOf(game.display.healthText.getText()) - 5));
-                } else if (game.table.getNumDots()== 3)
-                {
-                    game.display.healthText.setText(String.valueOf(Integer.valueOf(game.display.healthText.getText()) - 10));
-                } else
-                {
-                    
-                }
+                    // Locks Room Till Defeat
+                    game.choice.disableButtons();
+                    game.controls.enableButtons();
+                    if (roll == 1 || roll == 2) {
+                        game.display.addHealth(-5);
+                    }
+                    else if (roll == 3) {
+                        game.display.addHealth(-10);
+                    }
+                    else {
+
+                    }
+                    break;
                 case "CHEST":
-                if (game.table.getNumDots()== 1 || game.table.getNumDots()== 2 )
-                {
-                    game.display.healthText.setText(String.valueOf(Integer.parseInt(game.display.healthText.getText()) - 5));
-                }
-                */
-                continue;
+                    break;
                 case "LOCKED":
-                // Roll to unlock
-                continue;
+                    // Roll to unlock
+                    break;
                 case "KEY":
-                // Requires Key
-                continue;
+                    // Requires Key
+                    break;
 
-                // Colors
+                    // Colors
                 case "RED":
-                continue;
+                    break;
                 case "RAINBOW":
-                continue;
+                    break;
                 case "GOLD":
-                continue;
+                    break;
 
-                // Items
+                    // Items
                 case "SWORD":
-                continue;
+                    break;
                 case "WELL":
-                continue;
+                    break;
                 case "ROLLS":
-                continue;
+                    break;
                 case "SHIELD":
-                continue;
+                    break;
                 case "SPIKE":
-                continue;
+                    break;
                 case "BUCKET":
-                continue;
+                    break;
                 case "HEALTH":
-                continue;
+                    break;
                 case "BOSS":
-                continue;
+                    break;
             }
         }
     }
@@ -120,13 +114,10 @@ public class Rooms {
             int end = roomArray[currentRoom[0]][currentRoom[1]].indexOf(':');
             if (end != -1) {
                 game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]].substring(end + 1));
-            }
-            else {
+            } else {
                 game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]]);
             }
-        }
-
-        else {
+        } else {
             game.journey.appendText("You shall not pass!");
             //             for (String item : readTag()) {
             //                 game.journey.appendText(item);
@@ -141,8 +132,7 @@ public class Rooms {
         int end = roomArray[currentRoom[0]][currentRoom[1]].indexOf(':');
         if (end != -1) {
             game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]].substring(end + 1));
-        }
-        else {
+        } else {
             game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]]);
         }
     }

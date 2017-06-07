@@ -14,11 +14,13 @@ public class AdventureDice extends JFrame {
     public AdventureDice() {
         super("AdventureDice");
 
+        EasySound buttons = new EasySound();
+
         currentMap = new Rooms(this);
         display = new DisplayPanel();
         table = new AdventureTable(display);
-        controls = new ControlPanel(table, this);
-        choice = new ChoicePanel(currentMap);
+        controls = new ControlPanel(this, buttons);
+        choice = new ChoicePanel(currentMap, buttons);
         journey = new AdventurePanel();
 
         JPanel panel = new JPanel();

@@ -13,6 +13,8 @@ public class EasySound {
     private int numBytes;
     File soundFile;
 
+    public EasySound() {}
+
     public EasySound(String fileName) {
         changeSong(fileName);
     }

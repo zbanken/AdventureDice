@@ -3,14 +3,14 @@ import javax.swing.*;
 
 public class ControlPanel extends JPanel
         implements ActionListener {
-    private AdventureTable table;
-    private AdventureDice parent;
+    private AdventureDice game;
+    private EasySound buttons;
     private JButton fightButton, runAwayButton;
 
     // Constructor
-    public ControlPanel(AdventureTable t, AdventureDice d) {
-        table = t;
-        parent = d;
+    public ControlPanel(AdventureDice d, EasySound b) {
+        buttons = b;
+        game = d;
         fightButton = new JButton("Fight");
         runAwayButton = new JButton("Run Away");
         fightButton.setActionCommand("Fight");
@@ -24,15 +24,18 @@ public class ControlPanel extends JPanel
 
     // Called when the roll button is clicked
     public void actionPerformed(ActionEvent e) {
-        if (!table.diceAreRolling())
+        //buttons.playMusic("/Users/scrufulufugus/Developer/APCS/AdventureDice/src/Beep1.wav");
+        if (!game.table.diceAreRolling()) {
             if (e.getActionCommand().equals("Fight")) {
-                table.rollDice();
-                parent.getDisplay().update(1, 1, e);
+                game.table.rollDice();
+                game.currentMap.callTags();
+                game.getDisplay().update(e);
             } else if (e.getActionCommand().equals("Run Away")) {
-                parent.currentMap.gotoLastRoom();
+                game.currentMap.gotoLastRoom();
                 disableButtons();
-                parent.choice.enableButtons();
+                game.choice.enableButtons();
             }
+        }
     }
 
     public void disableButtons() {

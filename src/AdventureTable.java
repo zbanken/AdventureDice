@@ -10,15 +10,14 @@ public class AdventureTable extends JPanel
     private RollingDie die1, die2;
     private final int delay = 20;
     private Timer clock;
-    private AdventureGame game;
     private DisplayPanel display;
+    int total;
 
     // Constructor
     public AdventureTable(DisplayPanel displ) {
         setBackground(Color.GREEN.darker());
         setBorder(new LineBorder(Color.BLACK, 3));
         display = displ;
-        game = new AdventureGame();
         die1 = new RollingDie();
         die2 = new RollingDie();
         clock = new Timer(delay, this);
@@ -30,6 +29,7 @@ public class AdventureTable extends JPanel
         RollingDie.setBounds(3, getWidth() - 3, 3, getHeight() - 3);
         die1.roll();
         clock.start();
+        total = die1.getNumDots();
     }
 
     public void rollTwoDice() {
@@ -37,13 +37,14 @@ public class AdventureTable extends JPanel
         die1.roll();
         die2.roll();
         clock.start();
+        total = die1.getNumDots() + die2.getNumDots();
     }
 
-    public void updateRoll() {
-        clock.stop();
-        int total = die1.getNumDots() + die2.getNumDots();
-        int result = game.processRoll(total);
-        int point = game.getPoint();
+    public int updateRoll() {
+        int realTotal = total;
+        total = 0;
+        System.out.println(realTotal);
+        return realTotal;
     }
 
     // Processes timer events
@@ -56,9 +57,8 @@ public class AdventureTable extends JPanel
             else if (die2.isRolling())
                 die2.avoidCollision(die1);
         } else {
-            updateRoll();
+            clock.stop();
         }
-
         repaint();
     }
 
