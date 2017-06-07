@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05c64af-2ece-4948-996d-8e5853e871f1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Rooms.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ControlPanel.java" afterPath="$PROJECT_DIR$/src/ControlPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RollingDie.java" afterPath="$PROJECT_DIR$/src/RollingDie.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rooms.java" afterPath="$PROJECT_DIR$/src/Rooms.java" />
     </list>
     <ignored path="AdventureDice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,11 +56,11 @@
       <file leaf-file-name="Rooms.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Rooms.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="822">
-              <caret line="82" column="30" lean-forward="true" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
+            <state relative-caret-position="841">
+              <caret line="177" column="23" lean-forward="false" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="23" />
               <folding>
-                <element signature="e#3279#3280#0" expanded="true" />
-                <element signature="e#3303#3304#0" expanded="true" />
+                <element signature="e#4825#4826#0" expanded="true" />
+                <element signature="e#4849#4850#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -786,7 +782,7 @@
       <workItem from="1496682197431" duration="1360000" />
       <workItem from="1496762853847" duration="2602000" />
       <workItem from="1496766393186" duration="2675000" />
-      <workItem from="1496848659804" duration="2959000" />
+      <workItem from="1496848659804" duration="5042000" />
     </task>
     <task id="LOCAL-00001" summary="Removed things">
       <created>1495562271457</created>
@@ -879,11 +875,25 @@
       <option name="project" value="LOCAL" />
       <updated>1496850720405</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="change">
+      <created>1496851666561</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1496851666561</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added descriptions">
+      <created>1496853989460</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1496853989460</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15908000" />
+    <option name="totallyTimeSpent" value="17991000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -899,7 +909,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -971,7 +981,8 @@
     <MESSAGE value="merge" />
     <MESSAGE value="Lots of stuff" />
     <MESSAGE value="change" />
-    <option name="LAST_COMMIT_MESSAGE" value="change" />
+    <MESSAGE value="Added descriptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added descriptions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -997,8 +1008,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3279#3280#0" expanded="true" />
-            <element signature="e#3303#3304#0" expanded="true" />
+            <element signature="e#4825#4826#0" expanded="true" />
+            <element signature="e#4849#4850#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1032,8 +1043,8 @@
         <state relative-caret-position="420">
           <caret line="28" column="6" lean-forward="false" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
           <folding>
-            <element signature="e#3279#3280#0" expanded="true" />
-            <element signature="e#3303#3304#0" expanded="true" />
+            <element signature="e#4825#4826#0" expanded="true" />
+            <element signature="e#4849#4850#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1074,8 +1085,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3279#3280#0" expanded="true" />
-            <element signature="e#3303#3304#0" expanded="true" />
+            <element signature="e#4825#4826#0" expanded="true" />
+            <element signature="e#4849#4850#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1328,11 +1339,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Rooms.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="822">
-          <caret line="82" column="30" lean-forward="true" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
+        <state relative-caret-position="841">
+          <caret line="177" column="23" lean-forward="false" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="23" />
           <folding>
-            <element signature="e#3279#3280#0" expanded="true" />
-            <element signature="e#3303#3304#0" expanded="true" />
+            <element signature="e#4825#4826#0" expanded="true" />
+            <element signature="e#4849#4850#0" expanded="true" />
           </folding>
         </state>
       </provider>
