@@ -27,7 +27,7 @@ public class Rooms {
             {"CHEST,HEALTH:Dark Red Chest", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
             {"", "Tunnel", "", "Tunnel", "", "", "KEY,GOLD:Locked Gold Door"},
             {"CHEST,GOLD:Gold Chest", "KEY,RAINBOW:Locked Rainbow Door", "Tunnel", "MONSTER:Burnt Orange Monster- \n Is it a *Burnt*\n Orange Monster, Or a \n *Burnt Orange* Monster?", "SPIKE:Spike Pit", "", "MONSTER,BOSS:A Giant Cavern Lurks\n In A Vast Golden Dragon \n \"Do you think flattery \n will keep you alive?\""},
-    };
+        };
 
     public Rooms(AdventureDice g) {
         game = g;
@@ -45,61 +45,74 @@ public class Rooms {
         return NORMAL;
     }
 
+    boolean almostDead = false;
+    
     public void callTags() {
         String[] tags = readTags();
         int roll = game.table.updateRoll();
+        
         //int roll = currentRoll;
         for (String tag : tags) {
+            
             switch (tag) {
                 // Parent Classes
                 case "MONSTER":
-                    // Locks Room Till Defeat
-                    game.choice.disableButtons();
-                    game.controls.enableButtons();
-                    if (roll == 1 || roll == 2) {
-                        game.display.addHealth(-5);
-                    }
-                    else if (roll == 3) {
-                        game.display.addHealth(-10);
+                // Locks Room Till Defeat
+                game.choice.disableButtons();
+                game.controls.enableButtons();
+                if (roll == 1 || roll == 2) {
+                    game.display.addHealth(-5);
+                }
+                else if (roll == 3) {
+                    game.display.addHealth(-10);
+                }
+                else if (roll == 6 || roll == 5 || roll == 4){
+                    if (almostDead == true)
+                    {
+                        game.journey.changeText("The monster is dead");
+                        game.controls.disableButtons();
+                        game.choice.enableButtons();
                     }
                     else {
-
+                        game.journey.changeText("The monster is almost dead");
+                        almostDead = true;
                     }
-                    break;
+                }
+                break;
                 case "CHEST":
-                    break;
+                break;
                 case "LOCKED":
-                    // Roll to unlock
-                    break;
+                // Roll to unlock
+                break;
                 case "KEY":
-                    // Requires Key
-                    break;
+                // Requires Key
+                break;
 
-                    // Colors
+                // Colors
                 case "RED":
-                    break;
+                break;
                 case "RAINBOW":
-                    break;
+                break;
                 case "GOLD":
-                    break;
+                break;
 
-                    // Items
+                // Items
                 case "SWORD":
-                    break;
+                break;
                 case "WELL":
-                    break;
+                break;
                 case "ROLLS":
-                    break;
+                break;
                 case "SHIELD":
-                    break;
+                break;
                 case "SPIKE":
-                    break;
+                break;
                 case "BUCKET":
-                    break;
+                break;
                 case "HEALTH":
-                    break;
+                break;
                 case "BOSS":
-                    break;
+                break;
             }
         }
     }
