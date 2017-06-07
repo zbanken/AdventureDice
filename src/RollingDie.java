@@ -6,7 +6,7 @@ import java.awt.Color;
 public class RollingDie extends Die {
     private static final double slowdown = 0.97,
             speedFactor = 0.04,
-            speedLimit = 2.0;
+            speedLimit = 1.0;
 
     private static int tableLeft, tableRight, tableTop, tableBottom;
 

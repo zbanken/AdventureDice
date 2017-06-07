@@ -31,7 +31,7 @@ public class Rooms {
             {"CHEST,HEALTH:Dark Red Chest", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
             {"", "Tunnel", "", "Tunnel", "", "", "KEY,GOLD:Locked Gold Door"},
             {"CHEST,GOLD:Gold Chest", "KEY,RAINBOW:Locked Rainbow Door", "Tunnel", "MONSTER:Burnt Orange Monster- \n Is it a *Burnt*\n Orange Monster, Or a \n *Burnt Orange* Monster?", "SPIKE:Spike Pit", "", "MONSTER,BOSS:A Giant Cavern Lurks\n In A Vast Golden Dragon \n \"Do you think flattery \n will keep you alive?\""},
-        };
+    };
 
     public Rooms(AdventureDice g) {
         game = g;
@@ -58,77 +58,77 @@ public class Rooms {
             switch (tag) {
                 // Parent Classes
                 case "MONSTER":
-                // Locks Room Till Defeat
-                game.choice.disableButtons();
-                game.controls.enableButtons();
-                if (roll == 1 || roll == 2) {
-                    game.display.addHealth(-5);
-                } else if (roll == 3) {
-                    game.display.addHealth(-10);
-                } else if (roll == 6 || roll == 5 || roll == 4) {
-                    if (almostDead == true) {
-                        game.journey.appendText("The monster is dead");
+                    // Locks Room Till Defeat
+                    game.controls.setAction("Fight");
+                    game.choice.disableButtons();
+                    game.controls.enableButtons();
+                    if (roll == 1 || roll == 2) {
+                        game.display.addHealth(-5);
+                    } else if (roll == 3) {
+                        game.display.addHealth(-10);
+                    } else if (roll == 6 || roll == 5 || roll == 4) {
+                        if (almostDead == true) {
+                            game.journey.appendText("The monster is dead");
+                            game.controls.disableButtons();
+                            game.choice.enableButtons();
+                            changeTag("MONSTER", "DEAD");
+                        } else {
+                            game.journey.appendText("The monster is almost dead");
+                            almostDead = true;
+                        }
+                    }
+                    break;
+                case "CHEST":
+                    break;
+                case "LOCKED":
+                    game.choice.disableButtons();
+                    game.controls.enableButtons();
+
+                    if (roll == 6 || roll == 5 || roll == 4) {
+                        game.journey.appendText("The Door is Unlocked");
                         game.controls.disableButtons();
                         game.choice.enableButtons();
-                        changeTag("MONSTER", "DEAD");
-                    } else {
-                        game.journey.appendText("The monster is almost dead");
-                        almostDead = true;
+
                     }
-                }
-                break;
-                case "CHEST":
-
-                break;
-                case "LOCKED":
-                game.choice.disableButtons();
-                game.controls.enableButtons();
-
-                if (roll == 6 || roll == 5 || roll == 4) {
-                    game.journey.appendText("The Door is Unlocked");
-                    game.controls.disableButtons();
-                    game.choice.enableButtons();
-
-                }
-                // Roll to unlock
-                break;
+                    // Roll to unlock
+                    break;
                 case "KEY":
-                // Requires Key
-                break;
+                    // Requires Key
+                    break;
                 case "DEAD":
-                break;
+                    break;
 
                 // Colors
                 case "RED":
-                boolean redKey = true;
-                game.journey.appendText("You got the RED key!");
-                break;
+                    boolean redKey = true;
+                    game.journey.appendText("You got the RED key!");
+                    break;
                 case "RAINBOW":
-                boolean rainbowKey = true;
-                game.journey.appendText("You got the RAINBOW key!");
-                break;
+                    boolean rainbowKey = true;
+                    game.journey.appendText("You got the RAINBOW key!");
+                    break;
                 case "GOLD":
-                boolean goldKey = true;
-                game.journey.appendText("You got the GOLD key!");
-                break;
+                    boolean goldKey = true;
+                    game.journey.appendText("You got the GOLD key!");
+                    break;
 
                 // Items
                 case "SWORD":
-                break;
+                    break;
                 case "WELL":
-                break;
+                    break;
                 case "ROLLS":
-                break;
+                    break;
                 case "SHIELD":
-                break;
+                    break;
                 case "SPIKE":
-                break;
+                    break;
                 case "BUCKET":
-                break;
+                    break;
                 case "HEALTH":
-                break;
+                    break;
                 case "BOSS":
-                break;
+                    break;
             }
         }
     }

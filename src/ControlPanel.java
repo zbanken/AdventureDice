@@ -5,20 +5,20 @@ public class ControlPanel extends JPanel
         implements ActionListener {
     private AdventureDice game;
     private EasySound buttons;
-    private JButton fightButton, runAwayButton;
+    private JButton actionButton, runAwayButton;
 
     // Constructor
     public ControlPanel(AdventureDice d, EasySound b) {
         buttons = b;
         game = d;
-        fightButton = new JButton("Fight");
+        actionButton = new JButton("Action");
         runAwayButton = new JButton("Run Away");
-        fightButton.setActionCommand("Fight");
+        actionButton.setActionCommand("Action");
         runAwayButton.setActionCommand("Run Away");
         disableButtons();
-        fightButton.addActionListener(this);
+        actionButton.addActionListener(this);
         runAwayButton.addActionListener(this);
-        add(fightButton);
+        add(actionButton);
         add(runAwayButton);
     }
 
@@ -26,7 +26,7 @@ public class ControlPanel extends JPanel
     public void actionPerformed(ActionEvent e) {
         //buttons.playMusic("/Users/scrufulufugus/Developer/APCS/AdventureDice/src/Beep1.wav");
         if (!game.table.diceAreRolling()) {
-            if (e.getActionCommand().equals("Fight")) {
+            if (e.getActionCommand().equals("Action")) {
                 game.table.rollDice();
                 game.currentMap.callTags();
                 game.getDisplay().update(e);
@@ -38,12 +38,16 @@ public class ControlPanel extends JPanel
         }
     }
 
+    public void setAction(String buttonText) {
+        actionButton.setText(buttonText);
+    }
+
     public void disableButtons() {
-        fightButton.setEnabled(false);
+        actionButton.setEnabled(false);
         runAwayButton.setEnabled(false);
     }
     public void enableButtons() {
-        fightButton.setEnabled(true);
+        actionButton.setEnabled(true);
         runAwayButton.setEnabled(true);
     }
 }
