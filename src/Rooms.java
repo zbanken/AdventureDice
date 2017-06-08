@@ -11,28 +11,51 @@ public class Rooms {
     boolean goldKey = false;
     AdventureDice game;
     private String[][] roomArray = {
-            {"", "", "Entrance- Are you ready?", "", "", "", ""},
-            {"", "", "Ladder- Darkness Lies Ahead", "", "", "", ""},
-            {"CHEST,SWORD:A fiery sword is embedded in a \nblock of granite", "MONSTER:An amethyst rabbit guards \nthe end of the passage", "\"Ouch!\" your head hits a\n low hanging stalagtite", "RED:A blazing fire fills \nthe room with smoke", "LOCKED:There's a locked green \ndoor to your east", "MONSTER:Red Monster", ""},
+            {"", "", "Entrance", "", "", "", ""},
+            {"", "", "Ladder", "", "", "", ""},
+            {"CHEST,SWORD:Sword In Stone", "MONSTER:Room of the Rabbit", "Rough-Cut Staircase", "CHEST,RED:Smoke-Filled Room", "LOCKED:Green Door", "MONSTER:Red Monster", ""},
             {"", "", "", "Purple door", "", "", ""},
             {"", "", "", "Ladder going down", "", "", ""},
-            {"", "MONSTER:Room with a smoky grey monster", "Tunnel", "Tall Room- the ceiling is\n hidden in darkness", "LOCKED:A surprisingly normal bookshelf is ", "CHEST,RAINBOW: Secret Rainbow Room- for some reason, violet\n is missing from the \nrainbow", ""},
+            {"", "MONSTER:Smoky Grey Monster", "Tunnel", "Tall Room", "LOCKED:Library", "CHEST,RAINBOW:Secret Rainbow Room", ""},
             {"", "", "", "Tunnel", "", "", ""},
-            {"MONSTER:Room with a \ntulip orange monster", "Tunnel", "Tunnel", "Narrow Room- \nyou can barely \nfit through", "Tunnel", "Tunnel", "MONSTER:Room with a pine \ngreen monster"},
-            {"", "", "", "LOCKED:Locked Banana Yellow Door", "", "", ""},
-            {"", "CHEST,WELL:Room with a well- \n \"You fool of a Took!\" ", "Tunnel", "Long Room- \n the room stretches out \n to infinity...", "Tunnel", "CHEST,ROLLS:Large Chest filled with \ninfinite-sided dice", ""},
+            {"MONSTER:Tulip Orange Monster", "Tunnel", "Tunnel", "Narrow Room", "Tunnel", "Tunnel", "MONSTER:Pine Green Monster"},
+            {"", "", "", "LOCKED:Banana Yellow Door", "", "", ""},
+            {"", "CHEST,WELL:Room With a Well", "Tunnel", "Long Room", "Tunnel", "CHEST,ROLLS:Chest Room", ""},
             {"", "", "", "Tunnel", "", "", ""},
-            {"CHEST,SHIELD:Small Chest \n made from coconut husks", "Damp Room- \nyour boots are \nsoaking wet", "LOCKED:Locked Purple Door", "Smelly Room- \n it smells like\n uneaten breakfast", "LOCKED:Locked Sunset-Orange Door", "SPIKE:Spike Pit", ""},
+            {"CHEST,SHIELD:Chest Room", "Damp Room", "LOCKED:Purple Door", "Smelly Room", "LOCKED:Sunset-Orange Door", "SPIKE:Spike Pit", ""},
             {"", "Tunnel", "", "Tunnel", "", "", ""},
-            {"BUCKET:\"This is a bucket\" \n *in the distance* \n \"Dear God...\"", "Puzzle Room- \n A sign reads\n \"Those who enter must extinguish \n their fears with water from the \n depths of the earth\" ", "", "MONSTER:A very Grey Monster", "", "", ""},
-            {"", "KEY,RED:Locked Red Door", "", "", "", "", ""},
+            {"BUCKET:Room with Bucket", "Puzzle Room", "", "MONSTER:Grey Monster", "", "", ""},
+            {"", "KEY,RED:Red Door", "", "", "", "", ""},
             {"MONSTER:Dark-Gray Monster", "Echo Room", "Tunnel", "MONSTER:Sea-Green Monster", "Tunnel", "MONSTER:Magenta Monster", "Winter-Wizard-Blue Room"},
             {"", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
             {"", "MONSTER:Turquoise Monster", "Tunnel", "Tunnel", "MONSTER:Pink Monster", "", "MONSTER:Dark Green Monster"},
-            {"CHEST,HEALTH:Dark Red Chest", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
+            {"CHEST,HEALTH:Chest Room", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
             {"", "Tunnel", "", "Tunnel", "", "", "KEY,GOLD:Locked Gold Door"},
-            {"CHEST,GOLD:Gold Chest", "KEY,RAINBOW:Locked Rainbow Door", "Tunnel", "MONSTER:Burnt Orange Monster- \n Is it a *Burnt*\n Orange Monster, Or a \n *Burnt Orange* Monster?", "SPIKE:Spike Pit", "", "MONSTER,BOSS:A Giant Cavern Lurks\n In A Vast Golden Dragon \n \"Do you think flattery \n will keep you alive?\""},
-        };
+            {"CHEST,GOLD:Chest Room", "KEY,RAINBOW:Rainbow Door", "Tunnel", "MONSTER:Burnt Orange Monster", "SPIKE:Spike Pit", "", "MONSTER,BOSS:The Final Showdown"},
+    };
+    private String[][] descriptionsArray = {
+            {"", "", "Are you ready?", "", "", "", ""},
+            {"", "", "Darkness lies ahead", "", "", "", ""},
+            {"A fiery sword is embedded in a \nblock of granite", "An amethyst rabbit from Caerbannog guards \nthe end of the passage", "\"Ouch!\" your head hits a\n low hanging stalactite", "A blazing fire fills \nthe room with smoke", "There's a locked green \ndoor to your east", "Red Monster", ""},
+            {"", "", "", "Purple door", "", "", ""},
+            {"", "", "", "Ladder going down", "", "", ""},
+            {"", "Room with a smoky grey monster", "Tunnel", "the ceiling is\n hidden in darkness", "A surprisingly normal bookshelf is ", "for some reason, violet\n is missing from the \nrainbow", ""},
+            {"", "", "", "Tunnel", "", "", ""},
+            {"Room with a \ntulip orange monster", "Tunnel", "Tunnel", "you can barely \nfit through", "Tunnel", "Tunnel", "Room with a pine \ngreen monster"},
+            {"", "", "", "Locked Banana Yellow Door", "", "", ""},
+            {"", "\"You fool of a Took!\" ", "Tunnel", "the room stretches out \n to infinity...", "Tunnel", "Large Chest filled with \ninfinite-sided dice", ""},
+            {"", "", "", "Tunnel", "", "", ""},
+            {"Small Chest \n made from coconut husks", "your boots are \nsoaking wet", "Locked Purple Door", "it smells like\n uneaten breakfast", "Locked Sunset-Orange Door", "Spike Pit", ""},
+            {"", "Tunnel", "", "Tunnel", "", "", ""},
+            {"\"This is a bucket\" \n *in the distance* \n \"Dear God...\"", "A sign reads\n \"Those who enter must extinguish \n their fears with water from the \n depths of the earth\" ", "", "A very Grey Monster", "", "", ""},
+            {"", "Locked Red Door", "", "", "", "", ""},
+            {"Dark-Gray Monster", "Echo Room", "Tunnel", "Sea-Green Monster", "Tunnel", "Magenta Monster", "Winter-Wizard-Blue Room"},
+            {"", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
+            {"", "Turquoise Monster", "Tunnel", "Tunnel", "Pink Monster", "", "Dark Green Monster"},
+            {"Dark Red Chest", "Tunnel", "", "Tunnel", "", "", "Tunnel"},
+            {"", "Tunnel", "", "Tunnel", "", "", "Locked Gold Door"},
+            {"Gold Chest", "Locked Rainbow Door", "Tunnel", "Is it a *Burnt*\n Orange Monster, Or a \n *Burnt Orange* Monster?", "Spike Pit", "", "A Giant Cavern Lurks\n In A Vast Golden Dragon \n \"Do you think flattery \n will keep you alive?\""},
+    };
 
     public Rooms(AdventureDice g) {
         game = g;
@@ -59,117 +82,116 @@ public class Rooms {
             switch (tag) {
                 // Parent Classes
                 case "MONSTER":
-                // Locks Room Till Defeat
-                game.controls.setAction("Fight");
-                game.choice.disableButtons();
-                game.controls.enableButtons();
-                if (roll == 1 || roll == 2) {
-                    game.display.addHealth(-5);
-                } else if (roll == 3) {
-                    game.display.addHealth(-10);
-                } else if (roll == 6 || roll == 5 || roll == 4) {
-                    if (almostDead == true) {
-                        game.journey.appendText("The monster is dead");
+                    // Locks Room Till Defeat
+                    game.controls.setAction("Fight");
+                    game.choice.disableButtons();
+                    game.controls.enableButtons();
+                    if (roll == 1 || roll == 2) {
+                        game.display.addHealth(-5);
+                    } else if (roll == 3) {
+                        game.display.addHealth(-10);
+                    } else if (roll == 6 || roll == 5 || roll == 4) {
+                        if (almostDead) {
+                            game.journey.appendText("The monster is dead");
+                            game.controls.disableButtons();
+                            game.choice.enableButtons();
+                            changeTag("MONSTER", "DEAD");
+                        } else {
+                            game.journey.appendText("The monster is almost dead");
+                            almostDead = true;
+                        }
+                    }
+                    break;
+
+                case "CHEST":
+                    break;
+
+                case "LOCKED":
+                    game.controls.setAction("Pick Lock");
+                    game.choice.disableButtons();
+                    game.controls.enableButtons();
+
+                    if (roll == 6 || roll == 5 || roll == 4) {
+                        game.journey.appendText("Alohomora! \n The Door is Unlocked");
                         game.controls.disableButtons();
                         game.choice.enableButtons();
-                        changeTag("MONSTER", "DEAD");
-                    } else {
-                        game.journey.appendText("The monster is almost dead");
-                        almostDead = true;
+
                     }
-                }
-                break;
-                
-                case "CHEST":
-                break;
-                
-                case "LOCKED":
-                game.controls.setAction("Pick Lock");
-                game.choice.disableButtons();
-                game.controls.enableButtons();
+                    // Roll to unlock
+                    break;
 
-                if (roll == 6 || roll == 5 || roll == 4) {
-                    game.journey.appendText("Alohomora! \n The Door is Unlocked");
-                    game.controls.disableButtons();
-                    game.choice.enableButtons();
-
-                }
-                // Roll to unlock
-                break;
-                
                 case "KEY":
-                game.choice.disableButtons();
-                game.controls.enableButtons();
-                game.controls.setAction("You Need the RED key");
-                if ((currentRoom[r] == 15 && currentRoom[c] == 2 && (redKey == true)))
-                {
-                    game.journey.appendText("The RED room is unlocked!");
-                    game.controls.disableButtons();
-                    game.choice.enableButtons();
-                }
-                break;
-                
+                    game.choice.disableButtons();
+                    game.controls.enableButtons();
+                    game.controls.setAction("You Need the RED key");
+                    if ((currentRoom[r] == 15 && currentRoom[c] == 2 && redKey)) {
+                        game.journey.appendText("The RED room is unlocked!");
+                        game.controls.disableButtons();
+                        game.choice.enableButtons();
+                    }
+                    break;
+
                 case "DEAD":
-                break;
+                    descriptionsArray[currentRoom[0]][currentRoom[1]] = "A dead monster lies at your feet";
+                    break;
 
                 // Colors
                 case "RED":
-                boolean redKey = true;
-                game.journey.appendText("You got the RED key!");
-                break;
-                
+                    boolean redKey = true;
+                    game.journey.appendText("You got the RED key!");
+                    break;
+
                 case "RAINBOW":
-                boolean rainbowKey = true;
-                game.journey.appendText("You got the RAINBOW key!");
-                break;
-                
+                    boolean rainbowKey = true;
+                    game.journey.appendText("You got the RAINBOW key!");
+                    break;
+
                 case "GOLD":
-                boolean goldKey = true;
-                game.journey.appendText("You got the GOLD key!");
-                break;
+                    boolean goldKey = true;
+                    game.journey.appendText("You got the GOLD key!");
+                    break;
 
                 // Items
                 case "SWORD":
-                break;
+                    break;
                 case "WELL":
-                break;
+                    break;
                 case "ROLLS":
-                break;
+                    break;
                 case "SHIELD":
-                break;
+                    break;
                 case "SPIKE":
-                break;
+                    break;
                 case "BUCKET":
-                break;
+                    break;
                 case "HEALTH":
-                break;
+                    break;
                 case "BOSS":
-                game.controls.setAction("Challenge Dragon");
-                game.choice.disableButtons();
-                game.controls.enableButtons();
-                if (roll == 1 || roll == 2) {
-                    game.display.addHealth(-10);
-                } else if (roll == 3) {
-                    game.display.addHealth(-15);
-                } else if (roll == 6 || roll == 5) {
-                    if (almostAlmostDead == true) {
-                        game.journey.appendText("The dragon is slain... /n Congratulations, Hero!");
-                        game.controls.disableButtons();
-                        game.choice.enableButtons();
-                        changeTag("BOSS", "DEAD");
-                    } else {
-                        if (almostDead == true)
-                        {
-                            game.journey.appendText("The dragon ROARS!");
-                            almostAlmostDead = true;
+                    game.controls.setAction("Challenge Dragon");
+                    game.choice.disableButtons();
+                    game.controls.enableButtons();
+                    if (roll == 1 || roll == 2) {
+                        game.display.addHealth(-10);
+                    } else if (roll == 3) {
+                        game.display.addHealth(-15);
+                    } else if (roll == 6 || roll == 5) {
+                        if (almostAlmostDead) {
+                            game.journey.appendText("The dragon is slain... /n Congratulations, Hero!");
+                            game.controls.disableButtons();
+                            game.choice.enableButtons();
+                            changeTag("BOSS", "DEAD");
+                        } else {
+                            if (almostDead) {
+                                game.journey.appendText("The dragon ROARS!");
+                                almostAlmostDead = true;
+                            }
+                            game.choice.disableButtons();
+                            game.controls.enableButtons();
+                            game.journey.appendText("The dragon breathes fire!");
+                            almostDead = true;
                         }
-                        game.choice.disableButtons();
-                        game.controls.enableButtons();
-                        game.journey.appendText("The dragon breathes fire!");
-                        almostDead = true;
                     }
-                }
-                break;
+                    break;
             }
         }
     }
@@ -192,11 +214,9 @@ public class Rooms {
             } else {
                 game.journey.changeText(roomArray[currentRoom[0]][currentRoom[1]]);
             }
+            game.journey.appendText(descriptionsArray[currentRoom[0]][currentRoom[1]]);
         } else {
             game.journey.appendText("You shall not pass!");
-            //             for (String item : readTag()) {
-            //                 game.journey.appendText(item);
-            //}
         }
     }
 
