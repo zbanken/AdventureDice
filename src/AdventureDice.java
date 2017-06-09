@@ -35,7 +35,7 @@ public class AdventureDice extends JFrame {
         c.add(panel, BorderLayout.CENTER);
         c.add(choice, BorderLayout.SOUTH);
 
-        journey.changeText("THE ADVENTURE AWAITS\nWelcome to ADVENTUREDICE!");
+        currentMap.updateRoom(0,0);
     }
 
     public DisplayPanel getDisplay() {

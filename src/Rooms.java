@@ -1,7 +1,7 @@
 public class Rooms {
 
-    private final int r = 20;
-    private final int c = 6;
+    private final int r = 0;
+    private final int c = 2;
     private int[] currentRoom = {r, c};
     private int[] lastRoom = {r, c};
     boolean almostDead = false;
@@ -13,7 +13,7 @@ public class Rooms {
     private String[][] roomArray = {
             {"", "", "Entrance", "", "", "", ""},
             {"", "", "Ladder", "", "", "", ""},
-            {"CHEST,SWORD:Sword In Stone", "MONSTER:Room of the Rabbit", "Rough-Cut Staircase", "CHEST,RED:Smoke-Filled Room", "LOCKED:Green Door", "MONSTER:Red Monster", ""},
+            {"CHEST,SWORD:Sword In Stone", "MONSTER:Room of the Rabbit", "Rough-Cut Staircase", "RED:Smoke-Filled Room", "LOCKED:Green Door", "MONSTER:Red Monster", ""},
             {"", "", "", "Purple door", "", "", ""},
             {"", "", "", "Ladder going down", "", "", ""},
             {"", "MONSTER:Smoky Grey Monster", "Tunnel", "Tall Room", "LOCKED:Library", "CHEST,RAINBOW:Secret Rainbow Room", ""},
@@ -87,9 +87,9 @@ public class Rooms {
                     game.choice.disableButtons();
                     game.controls.enableButtons();
                     if (roll == 1 || roll == 2) {
-                        game.display.addHealth(-5);
+                        game.display.addHealth(-3);
                     } else if (roll == 3) {
-                        game.display.addHealth(-10);
+                        game.display.addHealth(-5);
                     } else if (roll == 6 || roll == 5 || roll == 4) {
                         if (almostDead) {
                             game.journey.appendText("The monster is dead");
@@ -132,22 +132,22 @@ public class Rooms {
                     break;
 
                 case "DEAD":
-                    descriptionsArray[currentRoom[0]][currentRoom[1]] = "A dead monster lies at your feet";
+                    descriptionsArray[currentRoom[0]][currentRoom[1]] = "A monster lies dead at your feet";
                     break;
 
                 // Colors
                 case "RED":
-                    boolean redKey = true;
-                    game.journey.appendText("You got the RED key!");
+                    redKey = true;
+                    game.journey.appendText("You got the RAINBOW key!");
                     break;
 
                 case "RAINBOW":
-                    boolean rainbowKey = true;
+                    rainbowKey = true;
                     game.journey.appendText("You got the RAINBOW key!");
                     break;
 
                 case "GOLD":
-                    boolean goldKey = true;
+                    goldKey = true;
                     game.journey.appendText("You got the GOLD key!");
                     break;
 
@@ -175,8 +175,8 @@ public class Rooms {
                     } else if (roll == 3) {
                         game.display.addHealth(-15);
                     } else if (roll == 6 || roll == 5) {
-                        if (almostAlmostDead) {
-                            game.journey.appendText("The dragon is slain... /n Congratulations, Hero!");
+                        if (almostAlmostDead && almostDead) {
+                            game.journey.appendText("The dragon is slain... \n Congratulations, Hero!");
                             game.controls.disableButtons();
                             game.choice.enableButtons();
                             changeTag("BOSS", "DEAD");
@@ -201,7 +201,7 @@ public class Rooms {
     }
 
     public void updateRoom(int directionX, int directionY) {
-        if (currentRoom[1] + directionX >= 0 && currentRoom[0] + directionY >= 0 && !roomArray[currentRoom[0] + directionY][currentRoom[1] + directionX].equals("")) {
+        if (currentRoom[1] + directionX >= 0 && currentRoom[0] + directionY >= 0 && currentRoom[0] + directionX < 20 && currentRoom[1] + directionY < 7 && !roomArray[currentRoom[0] + directionY][currentRoom[1] + directionX].equals("")) {
             almostDead = false;
             lastRoom[0] = currentRoom[0];
             lastRoom[1] = currentRoom[1];

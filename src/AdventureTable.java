@@ -43,7 +43,6 @@ public class AdventureTable extends JPanel
     public int updateRoll() {
         int realTotal = total;
         total = 0;
-        System.out.println(realTotal);
         return realTotal;
     }
 
